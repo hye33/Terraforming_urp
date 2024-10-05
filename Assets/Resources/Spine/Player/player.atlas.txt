@@ -1,0 +1,146 @@
+
+player.png
+size: 850,543
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Bag
+  rotate: true
+  xy: 2, 11
+  size: 129, 157
+  orig: 129, 157
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 640, 14
+  size: 111, 306
+  orig: 111, 306
+  offset: 0, 0
+  index: -1
+Gun
+  rotate: false
+  xy: 640, 322
+  size: 185, 76
+  orig: 185, 76
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 753, 231
+  size: 89, 93
+  orig: 89, 93
+  offset: 0, 0
+  index: -1
+L_Leg
+  rotate: true
+  xy: 640, 400
+  size: 78, 185
+  orig: 78, 185
+  offset: 0, 0
+  index: -1
+L_arm
+  rotate: false
+  xy: 753, 64
+  size: 87, 85
+  orig: 87, 85
+  offset: 0, 0
+  index: -1
+L_hannd
+  rotate: true
+  xy: 437, 7
+  size: 52, 42
+  orig: 52, 42
+  offset: 0, 0
+  index: -1
+R_arm
+  rotate: false
+  xy: 249, 27
+  size: 105, 113
+  orig: 105, 113
+  offset: 0, 0
+  index: -1
+SL_arm
+  rotate: true
+  xy: 753, 151
+  size: 78, 88
+  orig: 78, 88
+  offset: 0, 0
+  index: -1
+SL_hand
+  rotate: true
+  xy: 753, 2
+  size: 60, 49
+  orig: 60, 49
+  offset: 0, 0
+  index: -1
+SR_arm1
+  rotate: false
+  xy: 356, 2
+  size: 79, 57
+  orig: 79, 57
+  offset: 0, 0
+  index: -1
+SR_arm2
+  rotate: true
+  xy: 541, 34
+  size: 63, 58
+  orig: 63, 58
+  offset: 0, 0
+  index: -1
+SR_hand
+  rotate: true
+  xy: 804, 19
+  size: 43, 44
+  orig: 43, 44
+  offset: 0, 0
+  index: -1
+레이어 11 복사
+  rotate: true
+  xy: 481, 19
+  size: 78, 58
+  orig: 78, 58
+  offset: 0, 0
+  index: -1
+레이어 19
+  rotate: false
+  xy: 463, 99
+  size: 174, 74
+  orig: 174, 74
+  offset: 0, 0
+  index: -1
+레이어 2
+  rotate: false
+  xy: 350, 175
+  size: 288, 366
+  orig: 288, 366
+  offset: 0, 0
+  index: -1
+레이어 3
+  rotate: true
+  xy: 356, 61
+  size: 112, 105
+  orig: 112, 105
+  offset: 0, 0
+  index: -1
+레이어 3 복사
+  rotate: true
+  xy: 640, 480
+  size: 61, 195
+  orig: 61, 195
+  offset: 0, 0
+  index: -1
+레이어 4
+  rotate: true
+  xy: 161, 25
+  size: 115, 86
+  orig: 115, 86
+  offset: 0, 0
+  index: -1
+레이어 7 복사
+  rotate: false
+  xy: 2, 142
+  size: 346, 399
+  orig: 346, 399
+  offset: 0, 0
+  index: -1

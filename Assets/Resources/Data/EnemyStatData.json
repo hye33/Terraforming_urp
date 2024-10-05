@@ -1,0 +1,136 @@
+{
+  "enemyStats": [
+    {
+      "ID": 1001,
+      "hp": 20,
+      "damage": 25,
+      "touchDamage": 10,
+      "moveSpeed": 3,
+      "skillGauge": 24,
+      "objectDropPer": 35,
+      "trackRange": 10,
+      "attackRange": 2
+    },
+    {
+      "ID": 1002,
+      "hp": 25,
+      "damage": 20,
+      "touchDamage": 10,
+      "moveSpeed": 2,
+      "skillGauge": 20,
+      "objectDropPer": 30,
+      "trackRange": 4,
+      "attackRange": 10
+    },
+    {
+      "ID": 1003,
+      "hp": 20,
+      "damage": 30,
+      "touchDamage": 10,
+      "moveSpeed": 4,
+      "skillGauge": 16,
+      "objectDropPer": 40,
+      "trackRange": 10,
+      "attackRange": 10
+    },
+    {
+      "ID": 1004,
+      "hp": 40,
+      "damage": 40,
+      "touchDamage": 0,
+      "moveSpeed": 2,
+      "skillGauge": 8,
+      "objectDropPer": 45,
+      "trackRange": 15,
+      "attackRange": 3
+    },
+    {
+      "ID": 1005,
+      "hp": 9999,
+      "damage": 20,
+      "touchDamage": 0,
+      "moveSpeed": 0,
+      "skillGauge": 0,
+      "objectDropPer": 0,
+      "trackRange": 0,
+      "attackRange": 1
+    },
+    {
+      "ID": 1006,
+      "hp": 9999,
+      "damage": 20,
+      "touchDamage": 0,
+      "moveSpeed": 0,
+      "skillGauge": 0,
+      "objectDropPer": 0,
+      "trackRange": 0,
+      "attackRange": 1
+    },
+    {
+      "ID": 1010,
+      "hp": 160,
+      "damage": 35,
+      "touchDamage": 0,
+      "moveSpeed": 3,
+      "skillGauge": 0,
+      "objectDropPer": 0,
+      "trackRange": 100,
+      "attackRange": 1
+    },
+    {
+      "ID": 1100,
+      "hp": 160,
+      "damage": 100,
+      "touchDamage": 0,
+      "moveSpeed": 0,
+      "skillGauge": 0,
+      "objectDropPer": 0,
+      "trackRange": 100,
+      "attackRange": 1
+    },
+    {
+      "ID": 1101,
+      "hp": 200,
+      "damage": 80,
+      "touchDamage": 0,
+      "moveSpeed": 0,
+      "skillGauge": 0,
+      "objectDropPer": 0,
+      "trackRange": 100,
+      "attackRange": 1
+    },
+    {
+      "ID": 1102,
+      "hp": 1200,
+      "damage": 50,
+      "touchDamage": 0,
+      "moveSpeed": 0,
+      "skillGauge": 0,
+      "objectDropPer": 0,
+      "trackRange": 100,
+      "attackRange": 1
+    },
+    {
+      "ID": 1103,
+      "hp": 1000,
+      "damage": 50,
+      "touchDamage": 0,
+      "moveSpeed": 0,
+      "skillGauge": 0,
+      "objectDropPer": 0,
+      "trackRange": 100,
+      "attackRange": 1
+    },
+    {
+      "ID": 1104,
+      "hp": 800,
+      "damage": 50,
+      "touchDamage": 0,
+      "moveSpeed": 0,
+      "skillGauge": 0,
+      "objectDropPer": 0,
+      "trackRange": 100,
+      "attackRange": 1
+    }
+  ]
+}

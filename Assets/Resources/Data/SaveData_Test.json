@@ -1,0 +1,65 @@
+{
+    "SaveFiles": [
+        {
+            "number": 1,
+            "stage": "숲",
+            "playtime": "00:24:00",
+            "record": 4,
+            "gameProgress": 50
+        },{
+            "number": 2,
+            "stage": "숲",
+            "playtime": "12:22:56",
+            "record": 99,
+            "gameProgress": 20
+        },{
+            "number": 3,
+            "stage": "숲",
+            "playtime": "12:34:56",
+            "record": 99,
+            "gameProgress": 40
+        },{
+            "number": 4,
+            "stage": "숲",
+            "playtime": "12:34:56",
+            "record": 99,
+            "gameProgress": 15
+        },{
+            "number": 5,
+            "stage": "숲",
+            "playtime": "12:34:56",
+            "record": 99,
+            "gameProgress": 77
+        },{
+            "number": 6,
+            "stage": "숲",
+            "playtime": "12:34:56",
+            "record": 99,
+            "gameProgress": 80
+        },{
+            "number": 7,
+            "stage": "숲",
+            "playtime": "12:34:56",
+            "record": 99,
+            "gameProgress": 99
+        },{
+            "number": 8,
+            "stage": "숲",
+            "playtime": "12:34:56",
+            "record": 12,
+            "gameProgress": 40
+        },{
+            "number": 9,
+            "stage": "숲",
+            "playtime": "11:34:56",
+            "record": 99,
+            "gameProgress": 40
+        },{
+            "number": 10,
+            "stage": "숲",
+            "playtime": "12:34:56",
+            "record": 99,
+            "gameProgress": 40
+        }
+    ]
+}

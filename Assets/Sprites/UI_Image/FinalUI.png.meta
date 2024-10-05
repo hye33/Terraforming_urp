@@ -1,0 +1,1900 @@
+fileFormatVersion: 2
+guid: 2e5492a256623974a911661045439064
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FinalUI_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1042
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a40f34ebac272448110ff94d014066
+      internalID: -670826282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1037
+        width: 178
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 0, z: 19, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c814cd307d7524c46a49da73aef8fda0
+      internalID: 1229301311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_2
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 999
+        width: 73
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8c44272ee382cb40ab0d7896388be5c
+      internalID: -11921196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_5
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 999
+        width: 73
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e49bfdffc0dc64d8f291f6c157feb2
+      internalID: -1784890841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_6
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 1018
+        width: 51
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c3ff09c3db20c4a8955bf8a06d12d7
+      internalID: 674244344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_7
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 1019
+        width: 46
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930a5966d6f765e4d9405efb24cc476d
+      internalID: -1798484301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_9
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 1013
+        width: 67
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f1753b8d2005145be0d6934c20ba99
+      internalID: 1855303271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_11
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 991
+        width: 164
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d681b2190e3a754a9ee79188b258801
+      internalID: 354239682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_12
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 998
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2edf934aa50d16d4e98b291ae4362537
+      internalID: 1960888168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_25
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 949
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a749d12192af82e48a675c52a6a13a33
+      internalID: -1141283615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_26
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 953
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 221beadd1d204c8468068a0dcd6e46dd
+      internalID: -1591367671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_27
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 946
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447adf2289c59c64aa9fed4382c95f2f
+      internalID: -98923146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_28
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 941
+        width: 104
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1556c3743266f54aab3bb696a6a6d9b
+      internalID: 843676347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_29
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 944
+        width: 100
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9220b3cb1b6922e4db115f0cfdce36b8
+      internalID: -794510070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_30
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 954
+        width: 41
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50467ef49875460449dac57612279f85
+      internalID: 342391085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_31
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 917
+        width: 383
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b7065a65668b2449800bd0ad80ed82
+      internalID: -1686850016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_32
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 872
+        width: 40
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aa6e2ad13b49ee45b14bebf62c25152
+      internalID: 1169540662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_33
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 887
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7fa5f3569dd0f44abf6eecb182de97
+      internalID: 170140330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_34
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 868
+        width: 47
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f01de1188fa7964b8fafd782823971c
+      internalID: 1172821769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_35
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 885
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8b056a016f4844d9fd99936f5e00a6
+      internalID: -287651374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_36
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 883
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43692e1a8b8283f469f5f01e9e7890bc
+      internalID: 1760048731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_37
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 883
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff73692a2fb06c64ca9b7d0d421a2169
+      internalID: -939036535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_38
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 884
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae36bad5d7851d44abfd63857ef7b80
+      internalID: -2092210439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_39
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 884
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c88230e6ab6afbe43ad10d9309a6f4dd
+      internalID: -1001348999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_40
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 884
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00452fa6d18d38c45ab57a7dd9f5e8ae
+      internalID: -1885590991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_41
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 881
+        width: 66
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cedc9872fb3750a4198b33bac352b0e8
+      internalID: 1608795074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_42
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 869
+        width: 155
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21787a0f05e72bc44a58b8aa00759c56
+      internalID: -1989925922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_45
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 765
+        width: 108
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b3b1799627c61478a65d07dd297ac6
+      internalID: -1039284836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_46
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 765
+        width: 52
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b0e25c5364ec6d4b99abdf0e2432f0d
+      internalID: 1237587630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_48
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 790
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42bb509595cbad94fbe8158a6dc6370a
+      internalID: -443408184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_50
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 814
+        width: 35
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd567ee283448247ab7892b94958b52
+      internalID: -664907259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_51
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 808
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2d2c1f406df024f8732894567e4437
+      internalID: -931574196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_52
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 808
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0efbef3d0ed8c724493dad81b338333e
+      internalID: 298272319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_53
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 808
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1a352d251651745bfb06d218945e52
+      internalID: 1669703025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_55
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 145
+        width: 11
+        height: 615
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bdab823d9939594b8aad38c3525c436
+      internalID: -2103554619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_56
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 145
+        width: 13
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d223c7aaa7f784780a4f2a22dd1056
+      internalID: 584576606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_57
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 692
+        width: 463
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c024efc5a1f1ffb40bec3b4588ed9851
+      internalID: -1761323538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_58
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 692
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295e33412c5878c4da99352ecb0dcd34
+      internalID: 967530717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_59
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 622
+        width: 322
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2350acd0bcde224383d211950769eb6
+      internalID: 1995195883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_60
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 715
+        width: 41
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f911513c803b44b479b195904080451a
+      internalID: -1088778964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_62
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 451
+        width: 463
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e6e98a9ef906134fb7235dd6afe1153
+      internalID: -1544992737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_63
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 451
+        width: 42
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6d897c41aaf7848937543a973a6e96
+      internalID: 1166014634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_64
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 503
+        width: 178
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb03553637b8f2e43bfab2092bd69b8f
+      internalID: -1799604280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_65
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 645
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df5bc9897ff2314ca4f3416a92b71a8
+      internalID: -549397307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_66
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 626
+        width: 78
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da086bb432462942b7cfb5b45d4fa22
+      internalID: 1725358883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_67
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 626
+        width: 229
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a53d978c20bf04182562a0409a3607
+      internalID: -2039994798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_68
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 626
+        width: 78
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb87c67fd77b861459ca34a10ea269c6
+      internalID: -228393496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_69
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 645
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c23e40ee82851149b37e62896f30296
+      internalID: -180029462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_70
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 560
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99bbcdfab12f1324898a7b755b4d8632
+      internalID: -1135538061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_71
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 563
+        width: 60
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1510c6f8e51fb45aa09d169e83f900
+      internalID: 556602577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_72
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 506
+        width: 78
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 300765aa525efc74ba1790e5343b6121
+      internalID: -168540738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_85
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 116
+        width: 288
+        height: 289
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e90465bcb2fc09499e73178a41033a5
+      internalID: 1785289238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_86
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 291
+        width: 370
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf35b44b903f9548b66c716040e24f0
+      internalID: 106291194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_87
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 275
+        width: 130
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adeab135ec8f6be48b58f2829d5cf8b9
+      internalID: 1100349533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_88
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 336
+        width: 78
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ee15663103f70d4e933f3daadcbe44f
+      internalID: 740538312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_93
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 117
+        width: 387
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8237f79c54ba0214aa93ebe5de0e16cc
+      internalID: 1685283466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_94
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 119
+        width: 112
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 4, z: 4, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138af300d65f597438302da2dcc153fa
+      internalID: -544300550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_99
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 82
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce54645e08d866348b5df1bb6dd9faf5
+      internalID: 1971059122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_100
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 78
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec508721cc9617c4184eba70ce5d79fd
+      internalID: -742129605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_101
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 73
+        width: 30
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36020d50b19194b46bc16e6f7f36dc88
+      internalID: 983258981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_105
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 932
+        width: 122
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 1, z: 2, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a0dd20dd6905e479cdd5479bbfa852
+      internalID: 856538350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_3
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 71
+        width: 22
+        height: 636
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8d1435a4934134fa866742646e3272
+      internalID: 1561186359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_4
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 882
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0adb2538d68240438e1ea5ebcbf2119
+      internalID: 1474735706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_13
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 765
+        width: 108
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b9063b31ff5ae4dbd1a29ad5b17cb1
+      internalID: -530536793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_14
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 792
+        width: 40
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fff83fe85d764b48b0964d5ca618919
+      internalID: -345073687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_15
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 534
+        width: 129
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec185b967de70d489302c827a8ddc06
+      internalID: 2097367925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_16
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 335
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23ea37ec09ecab744bf381c3c0d7a24f
+      internalID: -2126125150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_17
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 244
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a124a898efd48449e045c74c93fb8f
+      internalID: 1337413808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_18
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 160
+        width: 57
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6059e3cc43fc0674ebcc0eae38fe1dca
+      internalID: -92250977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_19
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 84
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202a83eabd083944aa513dd23fe1a4bb
+      internalID: -1501946424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_20
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 625
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f5797ae1413ae429b7333c232b6a93
+      internalID: 1142627216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_21
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 422
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c27c34281d022b4caac04db96850416
+      internalID: -725664873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_22
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 625
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5153877f63cbb8a4c899c21d65bca211
+      internalID: -831297059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_23
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 624
+        width: 232
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42318839203c6e24bade2dd6a5eddc1c
+      internalID: 980108331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 54
+        width: 1920
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50668cb0a986cb941b30a48b456bb23d
+      internalID: 1654283617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 41
+        width: 1135
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c31c662451da34ea33836eeb453b5f
+      internalID: 445113550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 28
+        width: 515
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089f0f854df96e54e9cc81c6ad23cae9
+      internalID: 328477649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 285
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b0bd91307470b40a63da513a8a067c
+      internalID: 1337816899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 18
+        width: 490
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc71079af93f104db4ce45d44a28c1a
+      internalID: -1622055468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalUI_47
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 122
+        width: 7
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1947e3506bfa274a8f624760f2cd6c0
+      internalID: 766441290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      FinalUI_0: -670826282
+      FinalUI_1: 1229301311
+      FinalUI_10: 445113550
+      FinalUI_100: -742129605
+      FinalUI_101: 983258981
+      FinalUI_102: 1981653571
+      FinalUI_103: 1078274899
+      FinalUI_104: 1171138702
+      FinalUI_105: 856538350
+      FinalUI_11: 354239682
+      FinalUI_12: 1960888168
+      FinalUI_13: -530536793
+      FinalUI_14: -345073687
+      FinalUI_15: 2097367925
+      FinalUI_16: -2126125150
+      FinalUI_17: 1337413808
+      FinalUI_18: -92250977
+      FinalUI_19: -1501946424
+      FinalUI_2: -11921196
+      FinalUI_20: 1142627216
+      FinalUI_21: -725664873
+      FinalUI_22: -831297059
+      FinalUI_23: 980108331
+      FinalUI_24: 328477649
+      FinalUI_25: -1141283615
+      FinalUI_26: -1591367671
+      FinalUI_27: -98923146
+      FinalUI_28: 843676347
+      FinalUI_29: -794510070
+      FinalUI_3: 1561186359
+      FinalUI_30: 342391085
+      FinalUI_31: -1686850016
+      FinalUI_32: 1169540662
+      FinalUI_33: 170140330
+      FinalUI_34: 1172821769
+      FinalUI_35: -287651374
+      FinalUI_36: 1760048731
+      FinalUI_37: -939036535
+      FinalUI_38: -2092210439
+      FinalUI_39: -1001348999
+      FinalUI_4: 1474735706
+      FinalUI_40: -1885590991
+      FinalUI_41: 1608795074
+      FinalUI_42: -1989925922
+      FinalUI_43: 1337816899
+      FinalUI_44: -1622055468
+      FinalUI_45: -1039284836
+      FinalUI_46: 1237587630
+      FinalUI_47: 766441290
+      FinalUI_48: -443408184
+      FinalUI_49: 894825413
+      FinalUI_5: -1784890841
+      FinalUI_50: -664907259
+      FinalUI_51: -931574196
+      FinalUI_52: 298272319
+      FinalUI_53: 1669703025
+      FinalUI_54: -1996263405
+      FinalUI_55: -2103554619
+      FinalUI_56: 584576606
+      FinalUI_57: -1761323538
+      FinalUI_58: 967530717
+      FinalUI_59: 1995195883
+      FinalUI_6: 674244344
+      FinalUI_60: -1088778964
+      FinalUI_61: -1606079708
+      FinalUI_62: -1544992737
+      FinalUI_63: 1166014634
+      FinalUI_64: -1799604280
+      FinalUI_65: -549397307
+      FinalUI_66: 1725358883
+      FinalUI_67: -2039994798
+      FinalUI_68: -228393496
+      FinalUI_69: -180029462
+      FinalUI_7: -1798484301
+      FinalUI_70: -1135538061
+      FinalUI_71: 556602577
+      FinalUI_72: -168540738
+      FinalUI_73: 186477730
+      FinalUI_74: 1705743819
+      FinalUI_75: -1713717566
+      FinalUI_76: 892962597
+      FinalUI_77: -1164887293
+      FinalUI_78: 840599554
+      FinalUI_79: 1050682803
+      FinalUI_8: 1654283617
+      FinalUI_80: -920276711
+      FinalUI_81: 1787292409
+      FinalUI_82: 568691399
+      FinalUI_83: -539592263
+      FinalUI_84: 944215684
+      FinalUI_85: 1785289238
+      FinalUI_86: 106291194
+      FinalUI_87: 1100349533
+      FinalUI_88: 740538312
+      FinalUI_89: -178924473
+      FinalUI_9: 1855303271
+      FinalUI_90: 641160850
+      FinalUI_91: -908050733
+      FinalUI_92: 2057548678
+      FinalUI_93: 1685283466
+      FinalUI_94: -544300550
+      FinalUI_95: -742151489
+      FinalUI_96: 686684428
+      FinalUI_97: -1358225043
+      FinalUI_98: -1677112555
+      FinalUI_99: 1971059122
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

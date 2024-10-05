@@ -1,0 +1,97 @@
+
+Forest01.png
+size: 682,293
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Head
+  rotate: true
+  xy: 170, 9
+  size: 152, 192
+  orig: 152, 200
+  offset: 0, 0
+  index: -1
+L_arm
+  rotate: true
+  xy: 410, 224
+  size: 67, 183
+  orig: 67, 183
+  offset: 0, 0
+  index: -1
+L_arm2
+  rotate: true
+  xy: 410, 165
+  size: 57, 157
+  orig: 57, 157
+  offset: 0, 0
+  index: -1
+L_eye
+  rotate: false
+  xy: 627, 124
+  size: 53, 91
+  orig: 53, 91
+  offset: 0, 0
+  index: -1
+L_leg.
+  rotate: false
+  xy: 419, 15
+  size: 84, 148
+  orig: 148, 148
+  offset: 64, 0
+  index: -1
+L_mouse
+  rotate: true
+  xy: 554, 3
+  size: 29, 65
+  orig: 65, 65
+  offset: 36, 0
+  index: -1
+R_Leg
+  rotate: false
+  xy: 554, 34
+  size: 71, 129
+  orig: 71, 129
+  offset: 0, 0
+  index: -1
+R_arm
+  rotate: false
+  xy: 364, 2
+  size: 53, 159
+  orig: 53, 159
+  offset: 0, 0
+  index: -1
+R_arm2
+  rotate: false
+  xy: 505, 11
+  size: 47, 152
+  orig: 48, 152
+  offset: 1, 0
+  index: -1
+R_eye
+  rotate: false
+  xy: 595, 217
+  size: 84, 74
+  orig: 85, 74
+  offset: 0, 0
+  index: -1
+R_mouse
+  rotate: false
+  xy: 627, 69
+  size: 43, 53
+  orig: 43, 53
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 15
+  size: 166, 276
+  orig: 166, 276
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 170, 163
+  size: 238, 128
+  orig: 238, 128
+  offset: 0, 0
+  index: -1

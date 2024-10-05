@@ -1,0 +1,146 @@
+
+pari.png
+size: 1400,404
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 1076, 7
+  size: 151, 151
+  orig: 151, 151
+  offset: 0, 0
+  index: -1
+L_Bugleg
+  rotate: true
+  xy: 585, 4
+  size: 32, 58
+  orig: 32, 58
+  offset: 0, 0
+  index: -1
+L_Leg
+  rotate: true
+  xy: 755, 8
+  size: 35, 87
+  orig: 35, 87
+  offset: 0, 0
+  index: -1
+L_wing
+  rotate: false
+  xy: 386, 2
+  size: 69, 34
+  orig: 69, 34
+  offset: 0, 0
+  index: -1
+R_Bugleg
+  rotate: true
+  xy: 457, 2
+  size: 34, 67
+  orig: 34, 67
+  offset: 0, 0
+  index: -1
+R_Leg
+  rotate: true
+  xy: 1291, 116
+  size: 42, 92
+  orig: 42, 92
+  offset: 0, 0
+  index: -1
+W_wing
+  rotate: false
+  xy: 526, 3
+  size: 57, 33
+  orig: 57, 33
+  offset: 0, 0
+  index: -1
+bladder1
+  rotate: false
+  xy: 900, 4
+  size: 46, 39
+  orig: 46, 39
+  offset: 0, 0
+  index: -1
+bladder2
+  rotate: false
+  xy: 705, 5
+  size: 48, 31
+  orig: 48, 31
+  offset: 0, 0
+  index: -1
+bladder3
+  rotate: true
+  xy: 1291, 63
+  size: 51, 42
+  orig: 51, 42
+  offset: 0, 0
+  index: -1
+bladder4
+  rotate: true
+  xy: 844, 4
+  size: 39, 54
+  orig: 39, 54
+  offset: 0, 0
+  index: -1
+bladder5
+  rotate: true
+  xy: 1229, 16
+  size: 68, 60
+  orig: 68, 60
+  offset: 0, 0
+  index: -1
+bladder6
+  rotate: false
+  xy: 948, 10
+  size: 31, 33
+  orig: 31, 33
+  offset: 0, 0
+  index: -1
+bladder7
+  rotate: false
+  xy: 1229, 86
+  size: 60, 72
+  orig: 60, 72
+  offset: 0, 0
+  index: -1
+bladder_1
+  rotate: false
+  xy: 645, 10
+  size: 58, 26
+  orig: 58, 26
+  offset: 0, 0
+  index: -1
+bladder_2
+  rotate: false
+  xy: 981, 17
+  size: 25, 26
+  orig: 25, 26
+  offset: 0, 0
+  index: -1
+레이어 14
+  rotate: true
+  xy: 386, 38
+  size: 364, 356
+  orig: 364, 356
+  offset: 0, 0
+  index: -1
+레이어 18
+  rotate: true
+  xy: 2, 16
+  size: 386, 382
+  orig: 386, 382
+  offset: 0, 0
+  index: -1
+레이어 2
+  rotate: false
+  xy: 1076, 160
+  size: 322, 242
+  orig: 322, 242
+  offset: 0, 0
+  index: -1
+레이어 21
+  rotate: true
+  xy: 744, 45
+  size: 357, 330
+  orig: 357, 330
+  offset: 0, 0
+  index: -1

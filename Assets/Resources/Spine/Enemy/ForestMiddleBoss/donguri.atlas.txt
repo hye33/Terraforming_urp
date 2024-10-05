@@ -1,0 +1,90 @@
+
+donguri.png
+size: 629,249
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Back
+  rotate: false
+  xy: 386, 7
+  size: 118, 87
+  orig: 118, 87
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 2, 6
+  size: 264, 241
+  orig: 264, 241
+  offset: 0, 0
+  index: -1
+L_Leg
+  rotate: false
+  xy: 454, 105
+  size: 48, 80
+  orig: 48, 80
+  offset: 0, 0
+  index: -1
+L_Leg2
+  rotate: true
+  xy: 268, 2
+  size: 92, 116
+  orig: 92, 116
+  offset: 0, 0
+  index: -1
+Lip
+  rotate: true
+  xy: 268, 96
+  size: 151, 130
+  orig: 151, 130
+  offset: 0, 0
+  index: -1
+MR
+  rotate: true
+  xy: 400, 187
+  size: 60, 79
+  orig: 60, 79
+  offset: 0, 0
+  index: -1
+R_Leg
+  rotate: true
+  xy: 506, 82
+  size: 57, 74
+  orig: 57, 74
+  offset: 0, 0
+  index: -1
+R_Leg2
+  rotate: false
+  xy: 566, 19
+  size: 61, 61
+  orig: 61, 61
+  offset: 0, 0
+  index: -1
+Tail
+  rotate: true
+  xy: 506, 10
+  size: 70, 58
+  orig: 70, 58
+  offset: 0, 0
+  index: -1
+Teeth
+  rotate: false
+  xy: 504, 141
+  size: 114, 37
+  orig: 114, 37
+  offset: 0, 0
+  index: -1
+Teeth2
+  rotate: false
+  xy: 506, 180
+  size: 120, 67
+  orig: 120, 67
+  offset: 0, 0
+  index: -1
+tongue
+  rotate: true
+  xy: 400, 97
+  size: 88, 52
+  orig: 88, 52
+  offset: 0, 0
+  index: -1

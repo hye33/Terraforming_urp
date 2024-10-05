@@ -1,0 +1,132 @@
+
+boss (1).png
+size: 1949,744
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Above
+  rotate: true
+  xy: 1740, 19
+  size: 169, 38
+  orig: 169, 38
+  offset: 0, 0
+  index: -1
+Back
+  rotate: true
+  xy: 1574, 145
+  size: 202, 164
+  orig: 202, 164
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 2, 186
+  size: 526, 556
+  orig: 526, 556
+  offset: 0, 0
+  index: -1
+Eye
+  rotate: true
+  xy: 530, 258
+  size: 67, 68
+  orig: 67, 68
+  offset: 0, 0
+  index: -1
+Eyeball
+  rotate: true
+  xy: 1780, 22
+  size: 166, 167
+  orig: 166, 167
+  offset: 0, 0
+  index: -1
+Eyeholl
+  rotate: false
+  xy: 1740, 190
+  size: 178, 157
+  orig: 178, 157
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 1422, 126
+  size: 150, 211
+  orig: 150, 211
+  offset: 0, 0
+  index: -1
+KakaoTalk_20240908_164849354
+  rotate: false
+  xy: 1123, 339
+  size: 393, 403
+  orig: 393, 403
+  offset: 0, 0
+  index: -1
+KakaoTalk_20240908_164849354_01
+  rotate: true
+  xy: 1518, 349
+  size: 393, 403
+  orig: 393, 403
+  offset: 0, 0
+  index: -1
+Under
+  rotate: false
+  xy: 1422, 84
+  size: 175, 40
+  orig: 175, 40
+  offset: 0, 0
+  index: -1
+l1
+  rotate: false
+  xy: 530, 327
+  size: 295, 415
+  orig: 295, 415
+  offset: 0, 0
+  index: -1
+l2
+  rotate: true
+  xy: 961, 13
+  size: 312, 229
+  orig: 312, 229
+  offset: 0, 0
+  index: -1
+l3
+  rotate: false
+  xy: 2, 2
+  size: 302, 182
+  orig: 302, 182
+  offset: 0, 0
+  index: -1
+l4
+  rotate: false
+  xy: 613, 3
+  size: 170, 322
+  orig: 170, 322
+  offset: 0, 0
+  index: -1
+r1
+  rotate: false
+  xy: 827, 327
+  size: 294, 415
+  orig: 294, 415
+  offset: 0, 0
+  index: -1
+r2
+  rotate: true
+  xy: 1192, 25
+  size: 312, 228
+  orig: 312, 228
+  offset: 0, 0
+  index: -1
+r3
+  rotate: false
+  xy: 306, 6
+  size: 305, 178
+  orig: 305, 178
+  offset: 0, 0
+  index: -1
+r4
+  rotate: false
+  xy: 785, 6
+  size: 174, 319
+  orig: 174, 319
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,153 @@
+
+forest_02 (1).png
+size: 223,271
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L1
+  rotate: false
+  xy: 137, 39
+  size: 36, 37
+  orig: 36, 37
+  offset: 0, 0
+  index: -1
+L2
+  rotate: true
+  xy: 2, 85
+  size: 70, 74
+  orig: 70, 74
+  offset: 0, 0
+  index: -1
+L3
+  rotate: true
+  xy: 127, 104
+  size: 42, 35
+  orig: 42, 35
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 157
+  size: 124, 112
+  orig: 124, 112
+  offset: 0, 0
+  index: -1
+f1
+  rotate: false
+  xy: 176, 23
+  size: 20, 23
+  orig: 20, 23
+  offset: 0, 0
+  index: -1
+f1_2
+  rotate: true
+  xy: 198, 18
+  size: 19, 23
+  orig: 19, 23
+  offset: 0, 0
+  index: -1
+f2
+  rotate: false
+  xy: 200, 39
+  size: 20, 24
+  orig: 20, 24
+  offset: 0, 0
+  index: -1
+f2_2
+  rotate: false
+  xy: 200, 65
+  size: 20, 27
+  orig: 20, 27
+  offset: 0, 0
+  index: -1
+f3
+  rotate: false
+  xy: 190, 94
+  size: 30, 25
+  orig: 30, 25
+  offset: 0, 0
+  index: -1
+f4
+  rotate: false
+  xy: 142, 5
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+f5
+  rotate: true
+  xy: 164, 121
+  size: 25, 39
+  orig: 25, 39
+  offset: 0, 0
+  index: -1
+f6
+  rotate: false
+  xy: 175, 48
+  size: 23, 34
+  orig: 23, 34
+  offset: 0, 0
+  index: -1
+leg1_1
+  rotate: true
+  xy: 2, 24
+  size: 59, 64
+  orig: 59, 64
+  offset: 0, 0
+  index: -1
+leg1_2
+  rotate: false
+  xy: 2, 3
+  size: 47, 19
+  orig: 47, 19
+  offset: 0, 0
+  index: -1
+leg2_1
+  rotate: true
+  xy: 85, 2
+  size: 29, 55
+  orig: 29, 55
+  offset: 0, 0
+  index: -1
+leg2_2
+  rotate: false
+  xy: 51, 4
+  size: 32, 18
+  orig: 32, 18
+  offset: 0, 0
+  index: -1
+leg3_1
+  rotate: true
+  xy: 68, 33
+  size: 43, 67
+  orig: 43, 67
+  offset: 0, 0
+  index: -1
+leg3_2
+  rotate: false
+  xy: 127, 78
+  size: 35, 24
+  orig: 35, 24
+  offset: 0, 0
+  index: -1
+leg4_1
+  rotate: false
+  xy: 78, 78
+  size: 47, 77
+  orig: 47, 77
+  offset: 0, 0
+  index: -1
+leg4_2
+  rotate: true
+  xy: 164, 84
+  size: 35, 24
+  orig: 35, 24
+  offset: 0, 0
+  index: -1
+mouse
+  rotate: true
+  xy: 128, 148
+  size: 121, 87
+  orig: 121, 87
+  offset: 0, 0
+  index: -1

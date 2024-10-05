@@ -1,0 +1,8 @@
+{
+    "life": "4",
+    "hp": "300",
+    "closeDamage": "7",
+    "longDamage": "17",
+    "explodeDamage": "25",
+    "moveSpeed": "5"
+}
