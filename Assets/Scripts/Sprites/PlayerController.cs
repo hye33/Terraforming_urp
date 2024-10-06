@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     Define.EnemyState State;
 
-    private MapScene forestScene;
+    private MapScene _forestScene;
 
     private AudioClip _walkAudio;
     private AudioClip _landingAudio;
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
     private Puzzle _puzzle; // 퍼즐 UI 생성되었는지 확인 용 
     private void Init()
     {
-        forestScene = GetComponentInParent<MapScene>();
+        _forestScene = GetComponentInParent<MapScene>();
 
         animator = GetComponent<Animator>();
 
@@ -392,7 +392,7 @@ public class PlayerController : MonoBehaviour
             decreaseLife.Invoke();
         ResetState();
         gameObject.SetActive(true);
-        transform.position = forestScene.SavePointPos[forestScene.SavePointCount];
+        transform.position = _forestScene.SavePointPos[_forestScene.SavePointCount];
     }
 
     private void GameOver()
@@ -664,7 +664,7 @@ public class PlayerController : MonoBehaviour
     private void SettingSavePoint()
     {
         int slotNum = Managers.Game.SaveData.slotNum;
-        Managers.Game.SaveData.playTime = forestScene.PlayTime; // 플레이 타임 반영
+        Managers.Game.SaveData.playTime = _forestScene.PlayTime; // 플레이 타임 반영
         Managers.Game.SaveGameData(slotNum);
         Collider2D savePoint = Physics2D.OverlapCircle(
             transform.position, 1.0f, LayerMask.GetMask("SavePoint"));
@@ -673,17 +673,22 @@ public class PlayerController : MonoBehaviour
         {
             if (savePoint.GetComponent<SavePoint>().index == 1)
             {
-                transform.position = forestScene.SavePointPos[2];
+                transform.position = _forestScene.SavePointPos[2];
             }
             else
             {
-                transform.position = forestScene.SavePointPos[1];
+                transform.position = _forestScene.SavePointPos[1];
             }
         }
         else
         {
-            forestScene.MakeSavePoint(transform.position);
+            _forestScene.MakeSavePoint(transform.position);
         }
+    }
+
+    public void GetTerraformingGauge(int gauge)
+    {
+        _forestScene.UpdateTerraformingGauge(gauge, "Enemy"); // 수치 증가
     }
     #endregion
 

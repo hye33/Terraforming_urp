@@ -46,6 +46,9 @@ public abstract class Enemy : SpineAnimHandler
     protected int Damage { get; private set; }
     private float _moveSpeed;
     private int _skillGauge;
+    [SerializeField] private int _terraformingGauge = 0;
+
+    private GameObject _terraformingObjectPrefab;
 
     protected Rigidbody2D rb;
     // private TMP_Text hpText;
@@ -68,6 +71,8 @@ public abstract class Enemy : SpineAnimHandler
         _currentAnimState = AnimState.Idle;
         PlayLoopAnim((int)EnemyAnimEnum.Idle);
         _damagedAudio = Resources.Load<AudioClip>("Sounds/Effect/blow1-3");
+
+        _terraformingObjectPrefab = Resources.Load<GameObject>("Prefabs/Sprites/Effect/TerraformingObject");
     }
 
     private void SettingStat()
@@ -232,6 +237,17 @@ public abstract class Enemy : SpineAnimHandler
         PlayOneShotAnim((int)EnemyAnimEnum.Die, false);
         yield return new WaitForSeconds(2.5f);
         gameObject.SetActive(false);
+
+        for (int i = 0; i < _terraformingGauge; i++)
+        {
+            DropObject(_terraformingObjectPrefab, transform.position + new Vector3(i * 0.2f, 0.0f, 0.0f));
+        }
+    }
+
+    private void DropObject(GameObject prefab, Vector3 position)
+    {
+        GameObject go = Instantiate(prefab);
+        go.transform.position = position;
     }
 
     // 삭제 예정
