@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Floor
+  - Enemy
+  - Platform
+  - ItemObject
+  - Puzzle
+  - DeathTrigger
+  - Bound
   layers:
   - Default
   - TransparentFX
@@ -11,22 +18,22 @@ TagManager:
   - 
   - Water
   - UI
+  - Floor
+  - Platform
+  - ItemObject
+  - Puzzle
+  - Player
   - 
   - 
+  - Enemy
+  - Boss
+  - 
+  - ItemObject
+  - SavePoint
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - EffectObject
+  - EnemyBound
   - 
   - 
   - 
@@ -38,6 +45,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackObject
+    uniqueID: 3385051933
+    locked: 0
+  - name: MiddleObject
+    uniqueID: 201500467
+    locked: 0
+  - name: FrontObject
+    uniqueID: 868319733
+    locked: 0
+  - name: Ground
+    uniqueID: 3621643015
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Effect
+    uniqueID: 1132737345
+    locked: 0
+  - name: NearObject
+    uniqueID: 2366745185
     locked: 0
