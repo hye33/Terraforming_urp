@@ -47133,7 +47133,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 22d26c3c84b78f34bb4ac80261ba1012, type: 2}
+  sharedProfile: {fileID: 11400000, guid: d8617c952c174d149af1626cc76e35c3, type: 2}
 --- !u!1 &6688246630534925881
 GameObject:
   m_ObjectHideFlags: 0
@@ -54125,7 +54125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2915100142736482
 Transform:
   m_ObjectHideFlags: 0
@@ -54135,7 +54135,7 @@ Transform:
   m_GameObject: {fileID: 7610400242977042577}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -11.9, y: 17.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54161,7 +54161,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 1dcbc3c933a7020cf581c13307e3ddd7000000004133844361aa118d
+  m_ApplyToSortingLayers: 1dcbc3c933a7020cf581c13307e3ddd7000000004133844361aa118d77f3e8a0
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
