@@ -145,6 +145,7 @@ public class ForestMidBoss : Boss
         // effect.transform.position = transform.position;
         Destroy(gameObject);
         // Invoke("DestroyMidBossEffect", 0.8f);
+        _camera.ChangeCameraState((int)CameraController.ForestMapCameraState.FollowPlayer); // 카메라 state 변경
     }
 
     private void DestroyMidBossEffect()
