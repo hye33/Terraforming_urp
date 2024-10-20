@@ -71,6 +71,7 @@ public class PuzzleLock : MonoBehaviour
             else if (this.gameObject.name == "MiniBossLock")
             {
                 ShowMessage(miniBossChecking, "보스를 해치워야 문이 열릴 것 같다.");
+                Camera.main.GetComponent<CameraController>().ChangeCameraState((int)CameraController.ForestMapCameraState.MiddleBoss); // 카메라 state 변경
             }
         }
     }
@@ -122,6 +123,9 @@ public class PuzzleLock : MonoBehaviour
         sign.Init();
         sign.ShowMessage("문이 열리는 소리가 들린다.");
         Debug.Log(objectName + " Door Opening");
+
+        // 문 열린 후 trigger 제거
+        GetComponent<BoxCollider2D>().gameObject.SetActive(false);
 
         // 변수 업데이트 및 게임 저장 데이터 업데이트
         if (objectName == "PuzzleLock")

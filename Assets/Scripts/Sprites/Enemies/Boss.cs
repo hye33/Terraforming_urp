@@ -23,14 +23,14 @@ public abstract class Boss : SpineAnimHandler
             attackedAction.Invoke();
         // if (canAttacked == false)
         //     return;
-        DamagedAnim();
-        _hp = Mathf.Clamp(_hp - minus, 0, _maxHp);
-        Debug.Log("hp: " + _hp);
         if (_hp <= 0)
         {
             Death();
             return;
         }
+        DamagedAnim();
+        _hp = Mathf.Clamp(_hp - minus, 0, _maxHp);
+        Debug.Log("hp: " + _hp);
         // KnockBack(attacker.transform.position);
     }
 

@@ -49,6 +49,5 @@ public class EnemySpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
         forestScene.AddKillCount(_spawnEnemy);
-        forestScene.UpdateTerraformingGauge(2, "Enemy"); // 적이 죽었을 때 테라포밍게이지 2 증가
     }
 }
