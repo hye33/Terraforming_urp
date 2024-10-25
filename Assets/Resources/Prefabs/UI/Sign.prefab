@@ -68,8 +68,8 @@ MonoBehaviour:
   m_text: "\uD14C\uC2A4\uD2B8 \uD14D\uC2A4\uD2B8 \uC785\uB2C8\uB2E4.\n\uC774 \uBB38\uAD6C\uAC00
     \uCD9C\uB825\uB418\uBA74 \uC548\uB429\uB2C8\uB2E4.\n\uD655\uC778\uD574\uBCF4\uC138\uC694 "
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 43ca702ac774bd245ae3f14b577733af, type: 2}
-  m_sharedMaterial: {fileID: -410201385663572987, guid: 43ca702ac774bd245ae3f14b577733af, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 309aa84b4d890054eb085c522f6d70cd, type: 2}
+  m_sharedMaterial: {fileID: 7562972596576045026, guid: 309aa84b4d890054eb085c522f6d70cd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
