@@ -25,20 +25,22 @@ public class MapScene : MonoBehaviour
     private PlayerController _player;
     public PlayerController Player { get => _player; }
     private GameObject MainCamera;
-    private Vector3 _playerInitPos = new Vector3 (-6.5f, 13.3f, 0.0f);
+    private Vector3 _playerInitPos = new Vector3(-6.5f, 13.3f, 0.0f);
     private GameObject _savePointPrefab;
     private GameObject[] _savePoints = new GameObject[3];
     private Vector3[] _savePointsPos = new Vector3[3];
-    public Vector3[] SavePointPos { get => _savePointsPos;}
+    public Vector3[] SavePointPos { get => _savePointsPos; }
     [SerializeField]
     private int _savePointCount = 0;
-    public int SavePointCount { get => _savePointCount;}
+    public int SavePointCount { get => _savePointCount; }
     private int _currentIndex = 1;
     private int[] _killEnemyCount = new int[(int)Define.ForestEnemyType.MaxCount];
     private bool[] _getSkill = new bool[(int)Define.ForestEnemyType.MaxCount];
     private int[] _skillGuage = new int[(int)Define.ForestEnemyType.MaxCount];
     public int[] KillEnemyCount { get => _killEnemyCount; private set { _killEnemyCount = value; } }
     public int[] SkillGuage { get => _skillGuage; }
+
+    private EnemySpawner[] _enemySpawners;
 
     public bool IsStop = false;
 
@@ -83,7 +85,7 @@ public class MapScene : MonoBehaviour
         Managers.UI.SetCanvas(characterUI.gameObject);
 
         _player = FindObjectOfType<PlayerController>();
-        
+
         // 저장된 데이터 불러오기
         _terraformingGauge = Managers.Game.SaveData.terraformingGauge;
         _monsterTerraforming = Managers.Game.SaveData.monsterTerraforming;
@@ -97,6 +99,8 @@ public class MapScene : MonoBehaviour
         SettingScene();
         _savePointPrefab = Resources.Load<GameObject>("Prefabs/Sprites/SavePoint");
         _savePointsPos[0] = _player.transform.position;
+
+        _enemySpawners = FindObjectsOfType<EnemySpawner>();
 
         for (int i = 0; i < (int)Define.ForestEnemyType.MaxCount; i++)
         {
@@ -119,7 +123,7 @@ public class MapScene : MonoBehaviour
         {
             case Define.KeyEvent.Esc:
                 if (_pauseUI == null && _puzzleUI == null && _recordUI == null)
-                { 
+                {
                     _pauseUI = Managers.UI.ShowPopupUI<UI_Pause>("PauseUI");
                     Managers.UI.SetCanvas(_pauseUI.gameObject);
                     Time.timeScale = 0;
@@ -132,7 +136,7 @@ public class MapScene : MonoBehaviour
                 break;
 
             case Define.KeyEvent.I:
-                if(_pauseUI == null && _recordUI == null)
+                if (_pauseUI == null && _recordUI == null)
                 {
                     _recordUI = Managers.UI.ShowPopupUI<UI_Record>("RecordUI");
                     Managers.UI.SetCanvas(_recordUI.gameObject);
@@ -173,7 +177,7 @@ public class MapScene : MonoBehaviour
     {
         _killEnemyCount[(int)type]++;
         Debug.Log(type + ", " + _killEnemyCount[(int)type]);
-        if(AddSkillGuage != null)
+        if (AddSkillGuage != null)
         {
             AddSkillGuage.Invoke(type);
         }
@@ -194,7 +198,7 @@ public class MapScene : MonoBehaviour
         switch (type)
         {
             case "Enemy":
-                if(_monsterTerraforming < _maxMonsterTerraforming)
+                if (_monsterTerraforming < _maxMonsterTerraforming)
                 {
                     _monsterTerraforming += amount;
                     _terraformingGauge += amount;
@@ -219,13 +223,35 @@ public class MapScene : MonoBehaviour
                 break;
         }
 
+        if (_terraformingGauge >= 100)
+        {
+            foreach (var spawner in _enemySpawners)
+            {
+                spawner.isActive = false;
+                spawner.DeadEnemy();
+            }
+        }
+        else if (_terraformingGauge < 100 && _terraformingGauge >= 90)
+        {
+            Managers.Game.SaveData.playerMeleeDamage += 3;
+            Managers.Game.SaveData.playerRangeDamage += 3;
+        }
+        else if (_terraformingGauge < 90 && _terraformingGauge >= 60)
+        {
+            Managers.Game.SaveData.savePointHeal += 2;
+        }
+        else if (_terraformingGauge < 60 && _terraformingGauge >= 30)
+        {
+            Managers.Game.SaveData.playerMaxHp += 30;
+        }
+
         _terraformingGauge = Mathf.Clamp(_terraformingGauge, 0, 100);
         AddTerraformingGauge.Invoke(_terraformingGauge);
     }
 
     private void Update() // 플레이타임 증가
     {
-        if(_pauseUI == null)
+        if (_pauseUI == null)
         {
             PlayTime += Time.fixedDeltaTime;
         }

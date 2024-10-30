@@ -1,6 +1,6 @@
 {
     "life": "4",
-    "hp": "300",
+    "hp": "100",
     "closeDamage": "7",
     "longDamage": "17",
     "explodeDamage": "25",

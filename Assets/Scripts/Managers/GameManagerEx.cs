@@ -29,7 +29,11 @@ public class GameManagerEx
         public float playTime; // 플레이타임
         public int slotNum; // 저장 파일 슬롯 번호
         float leftChargeCoolTime;
-        // TODO: 지속 데미지 들어가던 거 있는지
+        
+        public int playerMeleeDamage = 7; // 근거리 공격력
+        public int playerRangeDamage = 17; // 원거리 공격력
+        public int savePointHeal = 3; // 회복량
+        public int playerMaxHp = 100; // 최대 hp
     }
     
     static GameData _gameData = new GameData();
