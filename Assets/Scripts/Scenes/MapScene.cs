@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class MapScene : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class MapScene : MonoBehaviour
 
     private float _terraformingGauge = 0;
     private float _monsterTerraforming = 0; // 몬스터 처치로 획득한 테라포밍 게이지 
-    private float _maxMonsterTerraforming = 40; // 몬스터로 획득 가능한 최대 테라포밍 게이지 
+    private float _maxMonsterTerraforming = 60; // 몬스터로 획득 가능한 최대 테라포밍 게이지 
     private float _inflaTerraforming = 0; // 염증 처치로 획득한 테라포밍 게이지  
     private float _maxInflaTerraforming = 40; // 염증으로 획득 가능한 최대 테라포밍 게이지 
 
@@ -25,20 +27,22 @@ public class MapScene : MonoBehaviour
     private PlayerController _player;
     public PlayerController Player { get => _player; }
     private GameObject MainCamera;
-    private Vector3 _playerInitPos = new Vector3 (-6.5f, 13.3f, 0.0f);
+    private Vector3 _playerInitPos = new Vector3(-6.5f, 13.3f, 0.0f);
     private GameObject _savePointPrefab;
     private GameObject[] _savePoints = new GameObject[3];
     private Vector3[] _savePointsPos = new Vector3[3];
-    public Vector3[] SavePointPos { get => _savePointsPos;}
+    public Vector3[] SavePointPos { get => _savePointsPos; }
     [SerializeField]
     private int _savePointCount = 0;
-    public int SavePointCount { get => _savePointCount;}
+    public int SavePointCount { get => _savePointCount; }
     private int _currentIndex = 1;
     private int[] _killEnemyCount = new int[(int)Define.ForestEnemyType.MaxCount];
     private bool[] _getSkill = new bool[(int)Define.ForestEnemyType.MaxCount];
     private int[] _skillGuage = new int[(int)Define.ForestEnemyType.MaxCount];
     public int[] KillEnemyCount { get => _killEnemyCount; private set { _killEnemyCount = value; } }
     public int[] SkillGuage { get => _skillGuage; }
+
+    private EnemySpawner[] _enemySpawners;
 
     public bool IsStop = false;
 
@@ -51,6 +55,10 @@ public class MapScene : MonoBehaviour
     private UI_Record _recordUI;
     public Puzzle PuzzleUI { set { _puzzleUI = value; } }
     public float PlayTime = 0; //플레이타임 기록 변수
+
+    private Volume _globalVolume;
+    private Vignette _vignette;
+
     private void SettingScene()
     {
         //_player = Instantiate(Resources.Load<GameObject>("Prefabs/Sprites/Player"), transform).GetComponent<PlayerController>();
@@ -83,7 +91,7 @@ public class MapScene : MonoBehaviour
         Managers.UI.SetCanvas(characterUI.gameObject);
 
         _player = FindObjectOfType<PlayerController>();
-        
+
         // 저장된 데이터 불러오기
         _terraformingGauge = Managers.Game.SaveData.terraformingGauge;
         _monsterTerraforming = Managers.Game.SaveData.monsterTerraforming;
@@ -97,6 +105,10 @@ public class MapScene : MonoBehaviour
         SettingScene();
         _savePointPrefab = Resources.Load<GameObject>("Prefabs/Sprites/SavePoint");
         _savePointsPos[0] = _player.transform.position;
+
+        _enemySpawners = FindObjectsOfType<EnemySpawner>();
+        _globalVolume = FindObjectOfType<Volume>();
+        _globalVolume.profile.TryGet(out _vignette);
 
         for (int i = 0; i < (int)Define.ForestEnemyType.MaxCount; i++)
         {
@@ -119,7 +131,7 @@ public class MapScene : MonoBehaviour
         {
             case Define.KeyEvent.Esc:
                 if (_pauseUI == null && _puzzleUI == null && _recordUI == null)
-                { 
+                {
                     _pauseUI = Managers.UI.ShowPopupUI<UI_Pause>("PauseUI");
                     Managers.UI.SetCanvas(_pauseUI.gameObject);
                     Time.timeScale = 0;
@@ -132,7 +144,7 @@ public class MapScene : MonoBehaviour
                 break;
 
             case Define.KeyEvent.I:
-                if(_pauseUI == null && _recordUI == null)
+                if (_pauseUI == null && _recordUI == null)
                 {
                     _recordUI = Managers.UI.ShowPopupUI<UI_Record>("RecordUI");
                     Managers.UI.SetCanvas(_recordUI.gameObject);
@@ -148,32 +160,36 @@ public class MapScene : MonoBehaviour
         _savePointCount++;
         GameObject go = Instantiate(_savePointPrefab, transform);
         go.transform.position = pos + new Vector3(0, 1.5f, 0);
-        if (_savePointCount == 3)
-        {
-            Destroy(_savePoints[_currentIndex]);
-            _savePoints[_currentIndex] = go;
-            _savePointCount = 2;
-        }
-        _savePointsPos[_currentIndex] = pos;
+
+        Destroy(_savePoints[_currentIndex]);
         _savePoints[_currentIndex] = go;
 
-        if (_currentIndex == 1)
-        {
-            go.GetComponent<SavePoint>().index = 1;
-            _currentIndex = 2;
-        }
-        else
-        {
-            go.GetComponent<SavePoint>().index = 2;
-            _currentIndex = 1;
-        }
+        // if (_savePointCount == 3)
+        // {
+        //     Destroy(_savePoints[_currentIndex]);
+        //     _savePoints[_currentIndex] = go;
+        //     _savePointCount = 2;
+        // }
+        // _savePointsPos[_currentIndex] = pos;
+        // _savePoints[_currentIndex] = go;
+
+        // if (_currentIndex == 1)
+        // {
+        //     go.GetComponent<SavePoint>().index = 1;
+        //     _currentIndex = 2;
+        // }
+        // else
+        // {
+        //     go.GetComponent<SavePoint>().index = 2;
+        //     _currentIndex = 1;
+        // }
     }
 
     public void AddKillCount(Define.ForestEnemyType type)
     {
         _killEnemyCount[(int)type]++;
         Debug.Log(type + ", " + _killEnemyCount[(int)type]);
-        if(AddSkillGuage != null)
+        if (AddSkillGuage != null)
         {
             AddSkillGuage.Invoke(type);
         }
@@ -194,7 +210,7 @@ public class MapScene : MonoBehaviour
         switch (type)
         {
             case "Enemy":
-                if(_monsterTerraforming < _maxMonsterTerraforming)
+                if (_monsterTerraforming < _maxMonsterTerraforming)
                 {
                     _monsterTerraforming += amount;
                     _terraformingGauge += amount;
@@ -214,9 +230,34 @@ public class MapScene : MonoBehaviour
                 break;
 
             default:
-                _terraformingGauge += amount;
+                _terraformingGauge = Mathf.Clamp(_terraformingGauge + amount, 0, 90);
                 Managers.Game.SaveData.terraformingGauge = _terraformingGauge;
                 break;
+        }
+
+        if (_terraformingGauge >= 100)
+        {
+            foreach (var spawner in _enemySpawners)
+            {
+                spawner.isActive = false;
+                spawner.DeadEnemy();
+            }
+        }
+        else if (_terraformingGauge < 100 && _terraformingGauge >= 90)
+        {
+            _vignette.intensity.Override(0.0f);
+            Managers.Game.SaveData.playerMeleeDamage += 3;
+            Managers.Game.SaveData.playerRangeDamage += 3;
+        }
+        else if (_terraformingGauge < 90 && _terraformingGauge >= 60)
+        {
+            _vignette.intensity.Override(0.25f);
+            Managers.Game.SaveData.savePointHeal += 2;
+        }
+        else if (_terraformingGauge < 60 && _terraformingGauge >= 30)
+        {
+            _vignette.intensity.Override(0.6f);
+            Managers.Game.SaveData.playerMaxHp += 30;
         }
 
         _terraformingGauge = Mathf.Clamp(_terraformingGauge, 0, 100);
@@ -225,7 +266,7 @@ public class MapScene : MonoBehaviour
 
     private void Update() // 플레이타임 증가
     {
-        if(_pauseUI == null)
+        if (_pauseUI == null)
         {
             PlayTime += Time.fixedDeltaTime;
         }

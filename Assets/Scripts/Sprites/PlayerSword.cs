@@ -21,7 +21,7 @@ public class PlayerSword : MonoBehaviour
 
     private void StatSetting()
     {
-        _power = Managers.Data.Player.closeDamage;
+        // _power = Managers.Data.Player.closeDamage;
         _scale = Stat.PLAYER_SWORD_RANGE;
     }
 
@@ -71,7 +71,7 @@ public class PlayerSword : MonoBehaviour
             {
                 Enemy enemy = target[i].GetComponent<Enemy>();
                 yield return new WaitForSeconds(0.3f);
-                enemy.Damaged(_power, gameObject);
+                enemy.Damaged(Managers.Game.SaveData.playerMeleeDamage, gameObject);
             }
         }
         yield return new WaitForSeconds(ATTACK_TERM);
@@ -87,7 +87,7 @@ public class PlayerSword : MonoBehaviour
             {
                 Boss boss = target[i].GetComponent<Boss>();
                 yield return new WaitForSeconds(0.3f);
-                boss.Damaged(_power, gameObject);
+                boss.Damaged(Managers.Game.SaveData.playerMeleeDamage, gameObject);
             }
         }
         yield return new WaitForSeconds(ATTACK_TERM);

@@ -49,6 +49,7 @@ public abstract class Enemy : SpineAnimHandler
     [SerializeField] private int _terraformingGauge = 0;
 
     private GameObject _terraformingObjectPrefab;
+    private HpBar_Sprite _hpBar;
 
     protected Rigidbody2D rb;
     // private TMP_Text hpText;
@@ -73,6 +74,8 @@ public abstract class Enemy : SpineAnimHandler
         _damagedAudio = Resources.Load<AudioClip>("Sounds/Effect/blow1-3");
 
         _terraformingObjectPrefab = Resources.Load<GameObject>("Prefabs/Sprites/Effect/TerraformingObject");
+        _hpBar = GetComponentInChildren<HpBar_Sprite>();
+        _hpBar.gameObject.SetActive(false);
     }
 
     private void SettingStat()
@@ -205,10 +208,12 @@ public abstract class Enemy : SpineAnimHandler
     // 몬스터 개체 피격
     public void Damaged(int minus, GameObject attacker = null)
     {
+        _hpBar.gameObject.SetActive(true);
         Managers.Sound.Play(_damagedAudio, Define.Sound.Effect);
         if (State == Define.EnemyState.Death)
             return;
         Hp = Mathf.Clamp(_hp - minus, 0, _maxHp);
+        _hpBar.updateHpBar(Hp, _maxHp);
         if (Hp <= 0)
         {
             DamagedAnim();
@@ -235,8 +240,10 @@ public abstract class Enemy : SpineAnimHandler
         // rb.bodyType = RigidbodyType2D.Static;
         _currentAnimState = AnimState.Die;
         PlayOneShotAnim((int)EnemyAnimEnum.Die, false);
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.8f);
         gameObject.SetActive(false);
+        _hpBar.updateHpBar(_maxHp, _maxHp);
+        _hpBar.gameObject.SetActive(true);
 
         for (int i = 0; i < _terraformingGauge; i++)
         {

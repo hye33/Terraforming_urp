@@ -283,7 +283,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -310,11 +310,10 @@ MonoBehaviour:
   _currentState: 0
   _pastAnim: 0
   _jumpCount: 0
+  _canMakeSavepoint: 0
   _unlockDoubleJump: 0
   _unlockTakeDown: 0
   _unlockSelfExplode: 0
-  _moveSpeed: 7.5
-  _jumpPower: 10
   _dashSmokePrefab: {fileID: 2130577210600174301, guid: 5e442133e0e21b54b80ba6c47dff531e, type: 3}
   _shadow: {fileID: 2889849240271559233}
 --- !u!210 &4974642604327431770

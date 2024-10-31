@@ -13,6 +13,8 @@ public class EnemySpawner : MonoBehaviour
     private GameObject currentEnemy;
     private Vector3 spawnPos;
 
+    public bool isActive = true;
+
     private void Init()
     {
         forestScene = FindObjectOfType<MapScene>();
@@ -24,6 +26,11 @@ public class EnemySpawner : MonoBehaviour
     {
         Init();
         SpawnEnemy();
+    }
+
+    public void DeadEnemy()
+    {
+        Destroy(currentEnemy);
     }
 
     private void SpawnEnemy()

@@ -41,7 +41,7 @@ public class SavePoint : MonoBehaviour
         while(true)
         {
             yield return new WaitForSecondsRealtime(TICK);
-            player.Healed(HEALING);
+            player.Healed(Managers.Game.SaveData.savePointHeal);
         }
     }
 }
