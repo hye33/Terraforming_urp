@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class MapScene : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class MapScene : MonoBehaviour
 
     private float _terraformingGauge = 0;
     private float _monsterTerraforming = 0; // 몬스터 처치로 획득한 테라포밍 게이지 
-    private float _maxMonsterTerraforming = 40; // 몬스터로 획득 가능한 최대 테라포밍 게이지 
+    private float _maxMonsterTerraforming = 60; // 몬스터로 획득 가능한 최대 테라포밍 게이지 
     private float _inflaTerraforming = 0; // 염증 처치로 획득한 테라포밍 게이지  
     private float _maxInflaTerraforming = 40; // 염증으로 획득 가능한 최대 테라포밍 게이지 
 
@@ -53,6 +55,10 @@ public class MapScene : MonoBehaviour
     private UI_Record _recordUI;
     public Puzzle PuzzleUI { set { _puzzleUI = value; } }
     public float PlayTime = 0; //플레이타임 기록 변수
+
+    private Volume _globalVolume;
+    private Vignette _vignette;
+
     private void SettingScene()
     {
         //_player = Instantiate(Resources.Load<GameObject>("Prefabs/Sprites/Player"), transform).GetComponent<PlayerController>();
@@ -101,6 +107,8 @@ public class MapScene : MonoBehaviour
         _savePointsPos[0] = _player.transform.position;
 
         _enemySpawners = FindObjectsOfType<EnemySpawner>();
+        _globalVolume = FindObjectOfType<Volume>();
+        _globalVolume.profile.TryGet(out _vignette);
 
         for (int i = 0; i < (int)Define.ForestEnemyType.MaxCount; i++)
         {
@@ -222,7 +230,7 @@ public class MapScene : MonoBehaviour
                 break;
 
             default:
-                _terraformingGauge += amount;
+                _terraformingGauge = Mathf.Clamp(_terraformingGauge + amount, 0, 90);
                 Managers.Game.SaveData.terraformingGauge = _terraformingGauge;
                 break;
         }
@@ -237,15 +245,18 @@ public class MapScene : MonoBehaviour
         }
         else if (_terraformingGauge < 100 && _terraformingGauge >= 90)
         {
+            _vignette.intensity.Override(0.0f);
             Managers.Game.SaveData.playerMeleeDamage += 3;
             Managers.Game.SaveData.playerRangeDamage += 3;
         }
         else if (_terraformingGauge < 90 && _terraformingGauge >= 60)
         {
+            _vignette.intensity.Override(0.25f);
             Managers.Game.SaveData.savePointHeal += 2;
         }
         else if (_terraformingGauge < 60 && _terraformingGauge >= 30)
         {
+            _vignette.intensity.Override(0.6f);
             Managers.Game.SaveData.playerMaxHp += 30;
         }
 
