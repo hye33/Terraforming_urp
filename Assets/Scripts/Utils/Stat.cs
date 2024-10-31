@@ -24,5 +24,5 @@ public class Stat
     public const float PLAYER_HEAL_RANGE = 3.0f; // 세이브 포인트 근처 힐 범위 ("반지름" 길이입니다)
 
     // Enemy Term
-    public const float ENEMY_SPAWN_TERM = 5.0f; // 몬스터 사망 후 스폰 텀
+    public const float ENEMY_SPAWN_TERM = 30.0f; // 몬스터 사망 후 스폰 텀
 }

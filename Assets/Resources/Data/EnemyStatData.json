@@ -5,7 +5,7 @@
       "hp": 20,
       "damage": 25,
       "touchDamage": 10,
-      "moveSpeed": 3,
+      "moveSpeed": 2,
       "skillGauge": 24,
       "objectDropPer": 35,
       "trackRange": 10,
