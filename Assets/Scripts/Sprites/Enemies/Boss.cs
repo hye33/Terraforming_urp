@@ -12,15 +12,20 @@ public abstract class Boss : SpineAnimHandler
     protected float _localSize;
     protected Action attackedAction;
 
+    protected UI_HpBar _hpBar;
+
     protected void BaseInit()
     {
         _localSize = transform.localScale.y;
+        _hpBar = FindObjectOfType<UI_HpBar>();
     }
 
     public void Damaged(int minus, GameObject attacker)
     {
         if (attackedAction != null)
             attackedAction.Invoke();
+        _hp = Mathf.Clamp(_hp - minus, 0, _maxHp);
+        _hpBar.updateHpBar(_hp, _maxHp);
         // if (canAttacked == false)
         //     return;
         if (_hp <= 0)
@@ -29,8 +34,7 @@ public abstract class Boss : SpineAnimHandler
             return;
         }
         DamagedAnim();
-        _hp = Mathf.Clamp(_hp - minus, 0, _maxHp);
-        Debug.Log("hp: " + _hp);
+        Debug.Log("hp: " + _hp + "/" + _maxHp);
         // KnockBack(attacker.transform.position);
     }
 
