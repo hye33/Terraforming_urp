@@ -9,10 +9,10 @@ public class GameManagerEx
     [Serializable]
     public class GameData
     {
-        int playerLife;
-        float playerHp;
-        Vector3 playerPosition;
-        int playerLocalScale; // sprite direction
+        public int playerLife;
+        public float playerHp;
+        public Vector3 playerPosition;
+        public int playerLocalScale; // sprite direction
         public Define.Stage stage;
         Define.StageState stageState;
         Vector3[] savepointPos;
@@ -34,12 +34,42 @@ public class GameManagerEx
         public int playerRangeDamage = 17; // 원거리 공격력
         public int savePointHeal = 3; // 회복량
         public int playerMaxHp = 100; // 최대 hp
+
+        public GameData DeepCopy()
+        {
+            GameData copy = new GameData();
+            copy.playerLife = playerLife;
+            copy.playerHp = playerHp;
+            copy.playerPosition = playerPosition;
+            copy.playerLocalScale = playerLocalScale;
+            copy.stage = stage;
+            return copy;
+
+            // 나머지 수치들도 추가해야됨...
+        }
     }
     
-    static GameData _gameData = new GameData();
+    private GameData _gameData = new GameData();
+    private GameData _autoSaveData = new GameData();
     public GameData SaveData { get { return _gameData; } set { _gameData = value; } }
+    public GameData AutoSaveData { get { return _autoSaveData; } set { _autoSaveData = value;} }
 
     public Define.Stage CurrentStage { get; private set; } = Define.Stage.Forest;
+
+    private int autoSaveNum; // 자동 저장 번호(순서)
+    public int AutoSaveNum { get { return autoSaveNum; } set { autoSaveNum = value; SaveAutoData(); } }
+
+    private void SaveAutoData()
+    {
+        SaveGameData(_gameData.slotNum);
+        AutoSaveData = _gameData.DeepCopy();
+    }
+
+    public void SetGameDataToSaved()
+    {
+        _gameData = AutoSaveData.DeepCopy();
+        SaveGameData(_gameData.slotNum);
+    }
 
     public void SaveGameData(int slotNum)
     {
@@ -48,6 +78,9 @@ public class GameManagerEx
         string path = Path.Combine(Application.persistentDataPath, $"gamedata_slot_{slotNum}.json"); // 파일 경로 지정
         File.WriteAllText(path, jsonData); // 파일에 JSON 데이터 저장
         Debug.Log($"파일 {slotNum}에 저장 완료: {path}");
+
+        Debug.Log("UserSave_auto: " + _autoSaveData.playerPosition);
+        Debug.Log("UserSave_gameData: " + _gameData.playerPosition);
     }
     public void LoadGameData(int slotNum)
     {

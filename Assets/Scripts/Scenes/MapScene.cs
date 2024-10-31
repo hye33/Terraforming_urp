@@ -152,25 +152,29 @@ public class MapScene : MonoBehaviour
         _savePointCount++;
         GameObject go = Instantiate(_savePointPrefab, transform);
         go.transform.position = pos + new Vector3(0, 1.5f, 0);
-        if (_savePointCount == 3)
-        {
-            Destroy(_savePoints[_currentIndex]);
-            _savePoints[_currentIndex] = go;
-            _savePointCount = 2;
-        }
-        _savePointsPos[_currentIndex] = pos;
+
+        Destroy(_savePoints[_currentIndex]);
         _savePoints[_currentIndex] = go;
 
-        if (_currentIndex == 1)
-        {
-            go.GetComponent<SavePoint>().index = 1;
-            _currentIndex = 2;
-        }
-        else
-        {
-            go.GetComponent<SavePoint>().index = 2;
-            _currentIndex = 1;
-        }
+        // if (_savePointCount == 3)
+        // {
+        //     Destroy(_savePoints[_currentIndex]);
+        //     _savePoints[_currentIndex] = go;
+        //     _savePointCount = 2;
+        // }
+        // _savePointsPos[_currentIndex] = pos;
+        // _savePoints[_currentIndex] = go;
+
+        // if (_currentIndex == 1)
+        // {
+        //     go.GetComponent<SavePoint>().index = 1;
+        //     _currentIndex = 2;
+        // }
+        // else
+        // {
+        //     go.GetComponent<SavePoint>().index = 2;
+        //     _currentIndex = 1;
+        // }
     }
 
     public void AddKillCount(Define.ForestEnemyType type)

@@ -20,6 +20,8 @@ public class PuzzleLock : MonoBehaviour
     GameObject upObject;
     GameObject downObject;
 
+    private GameObject player;
+
     private Vector3[] startPoint = new Vector3[2]; // 오브젝트 출발 위치를 담는다
     private Vector3[] endPoint = new Vector3[2];
     private void Start()
@@ -40,6 +42,7 @@ public class PuzzleLock : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            player = collision.gameObject;
             if (this.gameObject.name == "PuzzleLock")
             {
                 HandleLock(puzzleChecking);
@@ -57,6 +60,11 @@ public class PuzzleLock : MonoBehaviour
         {
             firstEnter = false;
             StartCoroutine(MoveObject(startPoint, endPoint, gameObject.name));
+
+            if (this.gameObject.name == "MiniBossLock")
+            {
+                player.GetComponent<PlayerController>().AutoSaveGame(2);
+            }
         }
     }
 
@@ -132,12 +140,15 @@ public class PuzzleLock : MonoBehaviour
         {
             puzzleChecking = true;
             Managers.Game.SaveData.puzzleSolved = true;
-            
+
+            player.GetComponent<PlayerController>().AutoSaveGame(1);
         }
         else if (objectName == "MidBossLock")
         {
             miniBossChecking = true;
             Managers.Game.SaveData.miniBossDie = true;
+
+            player.GetComponent<PlayerController>().AutoSaveGame(3);
         }
 
         firstEnter = true;
