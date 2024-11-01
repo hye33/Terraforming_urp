@@ -12,12 +12,22 @@ public abstract class Boss : SpineAnimHandler
     protected float _localSize;
     protected Action attackedAction;
 
+    public bool _useUIHpBar;
     protected UI_HpBar _hpBar;
+    protected HpBar_Sprite _hpBar_sprite;
 
     protected void BaseInit()
     {
         _localSize = transform.localScale.y;
-        _hpBar = FindObjectOfType<UI_HpBar>();
+        if (_useUIHpBar)
+        {
+            _hpBar = FindObjectOfType<UI_HpBar>();
+        }
+        else
+        {
+            _hpBar_sprite = FindObjectOfType<HpBar_Sprite>();
+            _hpBar_sprite.gameObject.SetActive(false);
+        }
     }
 
     public void Damaged(int minus, GameObject attacker)
@@ -25,7 +35,15 @@ public abstract class Boss : SpineAnimHandler
         if (attackedAction != null)
             attackedAction.Invoke();
         _hp = Mathf.Clamp(_hp - minus, 0, _maxHp);
-        _hpBar.updateHpBar(_hp, _maxHp);
+        if (_useUIHpBar)
+        {
+            _hpBar.updateHpBar(_hp, _maxHp);
+        }
+        else
+        {
+            _hpBar_sprite.gameObject.SetActive(true);
+            _hpBar_sprite.updateHpBar(_hp, _maxHp);
+        }
         // if (canAttacked == false)
         //     return;
         if (_hp <= 0)
@@ -49,5 +67,7 @@ public abstract class Boss : SpineAnimHandler
     protected void FlipSprite(float dir)
     {
         transform.localScale = new Vector3(-dir * _localSize, _localSize, 1);
+        if (!_useUIHpBar)
+            _hpBar_sprite.transform.localScale = new Vector3(-dir, 1, 1);
     }
 }
