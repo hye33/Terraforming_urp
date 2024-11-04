@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
 
     private void StatSetting()
     {
-        _power = Managers.Data.Player.longDamage;
+        _power = Managers.Game.SaveData.playerRangeDamage;
     }
 
     private void Init(bool isPlayer, int damage, float speed, bool destroyAtGround, Vector3 dir)

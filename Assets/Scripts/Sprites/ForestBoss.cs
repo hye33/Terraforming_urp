@@ -66,6 +66,7 @@ public class ForestBoss : Boss
     protected override void Awake()
     {
         base.Awake();
+        base.BaseInit();
 
         _rb = GetComponent<Rigidbody2D>();
         _player = FindObjectOfType<PlayerController>();

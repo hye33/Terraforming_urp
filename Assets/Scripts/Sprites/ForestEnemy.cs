@@ -24,9 +24,8 @@ public class ForestEnemy : Enemy
         new Vector2(-1, 5),
     };
 
-    private WaitForSecondsRealtime waitWithJump;
     private float _time;
-    private float _explodeTime = 1.4f;
+    private float _explodeTime = 2.0f;
     private WaitForSecondsRealtime waitExplodeTick;
     private float _explodeTick = 0.1f;
 
@@ -57,7 +56,6 @@ public class ForestEnemy : Enemy
                 StartCoroutine(coTrackPlayer());
                 break; 
             case Define.ForestEnemyType.Forest03:
-                waitWithJump = new WaitForSecondsRealtime(1.0f);
                 break;
             case Define.ForestEnemyType.Forest04:
                 waitExplodeTick = new WaitForSecondsRealtime(_explodeTick);
@@ -142,7 +140,7 @@ public class ForestEnemy : Enemy
         PlayOneShotAnim((int)EnemyAnimEnum.Hit);
         yield return new WaitForSeconds(0.55f);
         ShootAttack();
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(5.0f);
         if (State != Define.EnemyState.Death)
             State = Define.EnemyState.Idle;
         isAttacking = false;
@@ -197,7 +195,7 @@ public class ForestEnemy : Enemy
         }
         rb.velocity = Vector2.zero;
         PlayOneShotAnim((int)EnemyAnimEnum.Extra2);
-        yield return waitWithJump;
+        yield return new WaitForSeconds(2.5f);
         State = Define.EnemyState.Idle;
         PlayLoopAnim((int)EnemyAnimEnum.Idle);
         isAttacking = false;

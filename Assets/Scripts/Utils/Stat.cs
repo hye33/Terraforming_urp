@@ -6,7 +6,7 @@ public class Stat
 {
     // Player
     public const float PLAYER_MOVE_SPEED = 7.5f; // 이동 속도
-    public const float PLAYER_JUMP_POWER = 11.0f; // 점프력
+    public const float PLAYER_JUMP_POWER = 14.0f; // 점프력
     public const float PLAYER_TAKEDOWN_POWER = 20.0f; // 내려찍기 공격 속도
     public const float PLAYER_BULLET_SPEED = 20.0f; // 총알 속도
 
@@ -24,5 +24,5 @@ public class Stat
     public const float PLAYER_HEAL_RANGE = 3.0f; // 세이브 포인트 근처 힐 범위 ("반지름" 길이입니다)
 
     // Enemy Term
-    public const float ENEMY_SPAWN_TERM = 5.0f; // 몬스터 사망 후 스폰 텀
+    public const float ENEMY_SPAWN_TERM = 30.0f; // 몬스터 사망 후 스폰 텀
 }

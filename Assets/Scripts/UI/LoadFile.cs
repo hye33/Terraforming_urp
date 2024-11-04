@@ -117,7 +117,7 @@ public class LoadFile : UI_Popup
         {
             Managers.Game.SaveData.slotNum = _fileNumber;
             UnityEngine.Debug.Log("새 게임 시작");
-            SceneManager.LoadScene("Forest");
+            SceneManager.LoadScene("OpeningVideo");
         }
         else
         {

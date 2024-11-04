@@ -24,7 +24,7 @@ public class TerraformingObject : MonoBehaviour
         while (true)
         {
             //transform.position = Vector2.SmoothDamp(transform.position, _player.transform.position, ref zeroVelo, 0.5f);
-            transform.position = Vector2.MoveTowards(transform.position, _player.transform.position, 0.1f);
+            transform.position = Vector2.MoveTowards(transform.position, _player.transform.position, 0.05f);
             yield return null;
         }
     }

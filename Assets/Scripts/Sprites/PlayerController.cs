@@ -11,7 +11,6 @@ using UnityEngine.TextCore.Text;
 
 public class PlayerController : MonoBehaviour
 {
-    // 시간적 여유가 될 때 구조 변경할 거임
     GameObject[] _infoPrefabs;
     private enum infoEnum{ interactKey, mouseKey, moveKey, saveKey }
     Vector3 _infoPos = new Vector3(0, 3.0f, 0);
@@ -59,6 +58,8 @@ public class PlayerController : MonoBehaviour
     private float _coolTime = 5.0f;
     private int _bulletChargeCount;
 
+    public bool _canMakeSavepoint;
+
     private bool _standOnPlatform;
 
     private bool _getKeyS;
@@ -96,6 +97,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 _feetOffset = new Vector3(0, -1.2f, 0); // 발 위치
 
     private Puzzle _puzzle; // 퍼즐 UI 생성되었는지 확인 용 
+
+    private Vector3[] _autoSavePos;
     private void Init()
     {
         _forestScene = GetComponentInParent<MapScene>();
@@ -115,6 +118,8 @@ public class PlayerController : MonoBehaviour
         _deathAudio = Resources.Load<AudioClip>("Sounds/Effect/PlayerDeath");
 
         _infoPrefabs = Resources.LoadAll<GameObject>("Prefabs/Sprites/InfoUI");
+
+        _autoSavePos = Util.GetAllChildPositions(FindObjectOfType<AutoSavePoint>().gameObject);
 
         defaultScale = transform.localScale.y;
 
@@ -142,6 +147,8 @@ public class PlayerController : MonoBehaviour
         _standOnPlatform = false;
         _stopMove = false; // Set True when Shoot or Death state
 
+        _canMakeSavepoint = true;
+
         _currentState = PlayerState.Idle;
 
         _gun._aim.gameObject.SetActive(_weaponType == Define.PlayerWeapon.Gun);
@@ -160,11 +167,28 @@ public class PlayerController : MonoBehaviour
             changeWeapon.Invoke(_weaponType, _shootCount);
     }
 
+    private void SaveGame()
+    {
+        Managers.Game.SaveData.playerPosition = transform.position;
+        Managers.Game.SaveData.playerLife = _life;
+        Managers.Game.SaveData.playerHp = _hp;
+        Managers.Game.SaveGameData(Managers.Game.SaveData.slotNum);
+    }
+
+    public void AutoSaveGame(int idx)
+    {
+        Managers.Game.SaveData.playerPosition = _autoSavePos[idx];
+        Managers.Game.AutoSaveNum = idx;
+    }
+
     private void Start()
     {
         Init();
         ResetState();
         // ShowInfoIcon(infoEnum.moveKey);
+
+        Managers.Game.SaveData.playerPosition = _autoSavePos[0];
+        Managers.Game.AutoSaveNum = 0;
     }
 
     private void Update()
@@ -379,7 +403,7 @@ public class PlayerController : MonoBehaviour
         _life--;
         if (_life <= 0)
         {
-            GameOver();
+            Invoke("GameOver", 1.0f);
             yield break;
         }
         Invoke("Resurrent", 1.0f);
@@ -392,12 +416,19 @@ public class PlayerController : MonoBehaviour
             decreaseLife.Invoke();
         ResetState();
         gameObject.SetActive(true);
-        transform.position = _forestScene.SavePointPos[_forestScene.SavePointCount];
+        transform.position = Managers.Game.SaveData.playerPosition;
     }
 
     private void GameOver()
     {
-        gameObject.SetActive(false);
+        PlayAnimation(PlayerAnimEnum.Idle);
+        _life = 4;
+        if (decreaseLife != null)
+            decreaseLife.Invoke();
+        ResetState();
+        gameObject.SetActive(true);
+        Managers.Game.SetGameDataToSaved();
+        transform.position = Managers.Game.SaveData.playerPosition;
     }
     #endregion
 
@@ -663,26 +694,31 @@ public class PlayerController : MonoBehaviour
 
     private void SettingSavePoint()
     {
+        if (!_canMakeSavepoint)
+            return;
+
         int slotNum = Managers.Game.SaveData.slotNum;
         Managers.Game.SaveData.playTime = _forestScene.PlayTime; // 플레이 타임 반영
-        Managers.Game.SaveGameData(slotNum);
+        //Managers.Game.SaveGameData(slotNum);
         Collider2D savePoint = Physics2D.OverlapCircle(
             transform.position, 1.0f, LayerMask.GetMask("SavePoint"));
 
         if (savePoint != null)
         {
-            if (savePoint.GetComponent<SavePoint>().index == 1)
-            {
-                transform.position = _forestScene.SavePointPos[2];
-            }
-            else
-            {
-                transform.position = _forestScene.SavePointPos[1];
-            }
+            // 널일 경우 아무 작동 X
+            // if (savePoint.GetComponent<SavePoint>().index == 1)
+            // {
+            //     transform.position = _forestScene.SavePointPos[2];
+            // }
+            // else
+            // {
+            //     transform.position = _forestScene.SavePointPos[1];
+            // }
         }
         else
         {
             _forestScene.MakeSavePoint(transform.position);
+            SaveGame();
         }
     }
 
