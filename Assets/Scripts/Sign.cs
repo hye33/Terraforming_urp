@@ -29,7 +29,7 @@ public class Sign : UI_Popup
             {
                 Managers.Game.SaveData.getRecord.Add(ID, false);
             }
-            information = Managers.Data.ObjectDict[ID].Information;
+            information = Managers.Data.ObjectDict[ID].Explain;
         }
         if (ID >= 2000)
         {

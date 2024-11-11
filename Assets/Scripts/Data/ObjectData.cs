@@ -6,12 +6,11 @@ using UnityEngine;
 public class ObjectData
 {
     public int ID;
-    public string Information;
     public string Title;
-    public string Location;
     public string Type;
     public string Used;
     public string Explain;
+    public string Image;
 }
 
 [Serializable]
