@@ -82,17 +82,27 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (_isPlayer && other.CompareTag("Enemy"))
+        if (_isPlayer)
         {
-            Enemy enemy = other.GetComponent<Enemy>();
-            if (enemy.Type == Define.ForestEnemyType.Forest04)
+            if (other.CompareTag("Enemy"))
             {
-                enemy.Damaged(_power / 2);
-                return;
+                Enemy enemy = other.GetComponent<Enemy>();
+                if (enemy.Type == Define.ForestEnemyType.Forest04)
+                {
+                    enemy.Damaged(_power / 2);
+                    return;
+                }
+                enemy.Damaged(_damage);
             }
-            other.GetComponent<Enemy>().Damaged(_damage);
+            else if (other.CompareTag("Boss"))
+            {
+                Boss boss = other.GetComponent<Boss>();
+                boss.Damaged(_damage, gameObject);
+            }
+
             Destroy(gameObject);
         }
+        
         if (!_isPlayer && other.CompareTag("Player"))
         {
             PlayerController player = other.GetComponent<PlayerController>();

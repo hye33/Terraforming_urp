@@ -30,6 +30,8 @@ public class ForestMidBoss : Boss
     private GameObject _explodePrefab;
     private GameObject effect;
 
+    float _dir;
+
     protected override void Awake()
     {
         base.Awake();
@@ -77,6 +79,8 @@ public class ForestMidBoss : Boss
         _gas.SetActive(false);
         _dropObjectGameObj.SetActive(false);
 
+        _dir = -1;
+
         PlayLoopAnim((int)MidBossAnimEnum.Idle);
     }
     
@@ -91,9 +95,12 @@ public class ForestMidBoss : Boss
     {
         if (isTrack == false)
             return;
-        float dir = Mathf.Sign(_player.transform.position.x - transform.position.x);
-        FlipSprite(dir);
-        _rb.velocity = new Vector2( dir * 5.0f, 0);
+        float d = _player.transform.position.x - transform.position.x;
+        if (Mathf.Abs(d) < 0.1f) return;
+
+        _dir = Mathf.Sign(d);
+        if (_dir != 0) FlipSprite(_dir);
+        _rb.velocity = new Vector2(_dir * 5.0f, 0);
     }
 
     private IEnumerator coChangeTrackState(bool state, float t = 0)
@@ -272,19 +279,13 @@ public class ForestMidBoss : Boss
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(other.name);
         // 보스가 데미지 입는 경우의 Tag도 추가해 주어야 함
         if (!other.gameObject.CompareTag("Player"))
             return;
         PlayerController player = other.GetComponent<PlayerController>();
-        switch (_state)
-        {
-            case MidBossState.Rush:
-                player.Damaged(20); // 돌진 공격으로 부딪힐 경우 데미지
-                player.KnockBack(transform.position);
-                break;
-            default:
-                player.Damaged(10);
-                break;
-        }
+        player.Damaged(10);
+        player.KnockBack(transform.position);
+        
     }
 }

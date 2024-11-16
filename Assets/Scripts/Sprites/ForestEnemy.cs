@@ -72,19 +72,19 @@ public class ForestEnemy : Enemy
         switch (_type)
         {
             case Define.ForestEnemyType.Forest01:
-                StartCoroutine(nameof(coCommonAttack));
+                _currentAnimCo = StartCoroutine(nameof(coCommonAttack));
                 break;
             case Define.ForestEnemyType.Forest02:
-                StartCoroutine(nameof(coShootAttack));
+                _currentAnimCo = StartCoroutine(nameof(coShootAttack));
                 break;
             case Define.ForestEnemyType.Forest03:
                 // if (Util.checkProbability(50))
-                StartCoroutine(nameof(coJumpAttack));
+                _currentAnimCo = StartCoroutine(nameof(coJumpAttack));
                 // else
                 //StartCoroutine(nameof(coNormalAttack));
                 break;
             case Define.ForestEnemyType.Forest04:
-                StartCoroutine(nameof(CheckExplode));
+                _currentAnimCo = StartCoroutine(nameof(CheckExplode));
                 break;
         }
     }
