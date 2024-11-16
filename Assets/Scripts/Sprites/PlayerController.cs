@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     // Spine Anim Enum
     public enum PlayerAnimEnum { Idle, Walk, Jump, Land, Hit, Die, Attacked }
+    PlayerAnimEnum _currentAnimState;
     public enum PlayerSkinEnum { Sword, Gun }
 
     public PlayerAnimEnum _pastAnim;
@@ -203,6 +204,7 @@ public class PlayerController : MonoBehaviour
             {
                 Managers.Sound.Stop(Define.Sound.LoopEffect);
                 _currentState = PlayerState.Idle;
+                _currentAnimState = PlayerAnimEnum.Idle;
                 PlayAnimation(PlayerAnimEnum.Idle);
                 // PlayLoopAnim((int)PlayerAnimEnum.Idle * 2 + (int)_weaponType, 0);
             }
@@ -256,6 +258,7 @@ public class PlayerController : MonoBehaviour
     private void SetStateIdle()
     {
         _currentState = PlayerState.Idle;
+        _currentAnimState = PlayerAnimEnum.Idle;
         PlayAnimation(PlayerAnimEnum.Idle);
         _stopMove = false;
     }
@@ -368,6 +371,7 @@ public class PlayerController : MonoBehaviour
         _currentState = PlayerState.Damaged;
         //PlayOneShotAnim((int)PlayerAnimEnum.Attacked * 2 + (int)_weaponType, true, true);
         //DamagedAnim();
+        _currentAnimState = PlayerAnimEnum.Attacked;
         PlayAnimation(PlayerAnimEnum.Attacked);
         yield return new WaitForSeconds(0.35f);
         _currentState = PlayerState.None;
@@ -397,6 +401,7 @@ public class PlayerController : MonoBehaviour
         _currentState = PlayerState.Die;
         rb.velocity = Vector2.zero;
         //PlayOneShotAnim((int)PlayerAnimEnum.Die * 2 + (int)_weaponType, false, true, true, 0);
+        _currentAnimState = PlayerAnimEnum.Die;
         PlayAnimation(PlayerAnimEnum.Die);
         _canHit = false;
         yield return new WaitForSecondsRealtime(0.8f);
@@ -411,6 +416,7 @@ public class PlayerController : MonoBehaviour
 
     private void Resurrent()
     {
+        _currentAnimState = PlayerAnimEnum.Idle;
         PlayAnimation(PlayerAnimEnum.Idle);
         if (decreaseLife != null)
             decreaseLife.Invoke();
@@ -421,6 +427,7 @@ public class PlayerController : MonoBehaviour
 
     private void GameOver()
     {
+        _currentAnimState = PlayerAnimEnum.Idle;
         PlayAnimation(PlayerAnimEnum.Idle);
         _life = 4;
         if (decreaseLife != null)
@@ -438,6 +445,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_currentState != PlayerState.Run && _currentState < PlayerState.Jump)
         {
+            _currentAnimState = PlayerAnimEnum.Walk;
             PlayAnimation(PlayerAnimEnum.Walk);
             Managers.Sound.Play(_walkAudio, Define.Sound.LoopEffect);
             _currentState = PlayerState.Run;
@@ -473,6 +481,7 @@ public class PlayerController : MonoBehaviour
             return;
         _canDash = false;
         _shadow.SetActive(false);
+        _currentAnimState = PlayerAnimEnum.Jump;
         PlayAnimation(PlayerAnimEnum.Jump);
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
@@ -587,6 +596,7 @@ public class PlayerController : MonoBehaviour
             //PlayOneShotAnim((int)PlayerAnimEnum.Hit * 2 + (int)_weaponType, true, true);
             StopPlayer();
             _currentState = PlayerState.Sword;
+            _currentAnimState = PlayerAnimEnum.Hit;
             PlayAnimation(PlayerAnimEnum.Hit);
             _sword.Swing();
             Invoke("SetStateIdle", 0.8f);
@@ -598,6 +608,7 @@ public class PlayerController : MonoBehaviour
             if (_shootCount == 0)
                 return;
 
+            _currentAnimState = PlayerAnimEnum.Hit;
             PlayAnimation(PlayerAnimEnum.Hit);
             StartCoroutine(coShooting());
         }
@@ -655,6 +666,7 @@ public class PlayerController : MonoBehaviour
         }
         _gun._aim.gameObject.SetActive(_weaponType == Define.PlayerWeapon.Gun);
         animator.SetInteger("Weapon", (int)_weaponType);
+        PlayAnimation(_currentAnimState);
 
         if (_currentState == PlayerState.Idle)
         {
