@@ -56,6 +56,9 @@ public abstract class Enemy : SpineAnimHandler
 
     public Action isDead;
     private AudioClip _damagedAudio;
+
+    protected Coroutine _currentAnimCo;
+
     protected void BaseInit()
     {
         SettingStat();
@@ -239,6 +242,7 @@ public abstract class Enemy : SpineAnimHandler
         if (isDead != null)
             isDead.Invoke();
         // rb.bodyType = RigidbodyType2D.Static;
+        if(_currentAnimCo != null) StopCoroutine(_currentAnimCo);
         _currentAnimState = AnimState.Die;
         PlayOneShotAnim((int)EnemyAnimEnum.Die, false);
         yield return new WaitForSeconds(1.8f);
