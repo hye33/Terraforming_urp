@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6222905770164352599}
   m_Layer: 14
   m_Name: ForestMidBoss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +147,7 @@ MonoBehaviour:
   - stateName: shake
   - stateName: bad breath
   _skinState: []
+  _useUIHpBar: 0
   _scene: {fileID: 0}
   _puzzleLock: {fileID: 0}
   _gas: {fileID: 5900925100341229149}
