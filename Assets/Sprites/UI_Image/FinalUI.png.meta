@@ -753,7 +753,7 @@ TextureImporter:
         serializedVersion: 2
         x: 555
         y: 808
-        width: 10
+        width: 38
         height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -769,55 +769,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FinalUI_52
-      rect:
-        serializedVersion: 2
-        x: 569
-        y: 808
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0efbef3d0ed8c724493dad81b338333e
-      internalID: 298272319
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FinalUI_53
-      rect:
-        serializedVersion: 2
-        x: 583
-        y: 808
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f1a352d251651745bfb06d218945e52
-      internalID: 1669703025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: FinalUI_55
       rect:
         serializedVersion: 2
         x: 38
-        y: 145
+        y: 207
         width: 11
-        height: 615
+        height: 554
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -857,9 +815,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 110
-        y: 692
-        width: 463
-        height: 42
+        y: 451
+        width: 515
+        height: 283
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -869,27 +827,6 @@ TextureImporter:
       bones: []
       spriteID: c024efc5a1f1ffb40bec3b4588ed9851
       internalID: -1761323538
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FinalUI_58
-      rect:
-        serializedVersion: 2
-        x: 583
-        y: 692
-        width: 42
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 295e33412c5878c4da99352ecb0dcd34
-      internalID: 967530717
       vertices: []
       indices: 
       edges: []
@@ -932,48 +869,6 @@ TextureImporter:
       bones: []
       spriteID: f911513c803b44b479b195904080451a
       internalID: -1088778964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FinalUI_62
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 451
-        width: 463
-        height: 231
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e6e98a9ef906134fb7235dd6afe1153
-      internalID: -1544992737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FinalUI_63
-      rect:
-        serializedVersion: 2
-        x: 583
-        y: 451
-        width: 42
-        height: 231
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d6d897c41aaf7848937543a973a6e96
-      internalID: 1166014634
       vertices: []
       indices: 
       edges: []
@@ -1198,7 +1093,7 @@ TextureImporter:
         height: 111
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 5, y: 5, z: 5, w: 5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1764,7 +1659,7 @@ TextureImporter:
         width: 7
         height: 641
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

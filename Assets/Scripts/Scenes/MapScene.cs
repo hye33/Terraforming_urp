@@ -143,7 +143,8 @@ public class MapScene : MonoBehaviour
                 }
                 break;
 
-            case Define.KeyEvent.I:
+            case Define.KeyEvent.Tab:
+                Debug.Log(_recordUI);
                 if (_pauseUI == null && _recordUI == null)
                 {
                     _recordUI = Managers.UI.ShowPopupUI<UI_Record>("RecordUI");

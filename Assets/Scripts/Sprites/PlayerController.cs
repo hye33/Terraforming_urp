@@ -98,6 +98,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 _feetOffset = new Vector3(0, -1.2f, 0); // 발 위치
 
     private Puzzle _puzzle; // 퍼즐 UI 생성되었는지 확인 용 
+    private UI_Record _record;
 
     private Vector3[] _autoSavePos;
     private void Init()
@@ -561,6 +562,7 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    #region UI Event
     private void InteractW()
     {
         Collider2D[] objects = Physics2D.OverlapCircleAll(
@@ -579,6 +581,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    #endregion
 
     #region Attack and Skills
     private void Attack()

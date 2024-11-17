@@ -13,14 +13,21 @@ public class Sign : UI_Popup
     TextMeshProUGUI infoText;
     enum GameObjects
     {
-        signCanvas,
-        Information
+        Record,
+        MonsterGuide,
+        ExitR,
+        ExitM,
+        Title,
+        Image,
+        Message,
+        MText
     }
 
     public override void Init()
     {
         BindObject(typeof(GameObjects));
-        infoText = GetObject((int)GameObjects.Information).GetComponent<TextMeshProUGUI>();
+        infoText = GetObject((int)GameObjects.Title).GetComponent<TextMeshProUGUI>();
+        var objectData = Managers.Data.ObjectDict[ID];
 
         string information = "";
         if(ID > 0)
@@ -29,7 +36,7 @@ public class Sign : UI_Popup
             {
                 Managers.Game.SaveData.getRecord.Add(ID, false);
             }
-            information = Managers.Data.ObjectDict[ID].Information;
+            information = objectData.Title;
         }
         if (ID >= 2000)
         {
@@ -38,15 +45,10 @@ public class Sign : UI_Popup
             Managers.Input.UIKeyAction += InputKey;
             Check = false;
         }
-        else if (ID >= 1100 && !Check)
-        {
-            if (!Managers.Game.SaveData.getRelic.ContainsKey(ID))
-            {
-                Managers.Game.SaveData.getRelic.Add(ID, false);
-            }
-            information += "\n무엇인가 빛나는 것을 얻었다.";
-        }
+
         infoText.text = information;
+        GetObject((int)GameObjects.Image).GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/RecordObjects/" + objectData.Image);
+
     }
 
     private void InputKey(Define.KeyEvent key)
