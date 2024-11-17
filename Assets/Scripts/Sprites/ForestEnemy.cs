@@ -107,7 +107,7 @@ public class ForestEnemy : Enemy
 
         Collider2D hit = Physics2D.OverlapBox(
             transform.position + Vector3.forward * transform.localScale.x,
-            Vector2.one * 1.5f, 0, LayerMask.GetMask("Player"));
+            Vector2.one * 2.5f, 0, LayerMask.GetMask("Player"));
         if (hit != null)
         {
             yield return new WaitForSecondsRealtime(0.3f);
