@@ -287,4 +287,15 @@ public class ForestEnemy : Enemy
             return;
         hits.GetComponent<PlayerController>().Damaged(Damage, gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (_type != Define.ForestEnemyType.Forest02) return;
+        if (State == Define.EnemyState.Death) return;
+        if (!other.gameObject.CompareTag("Player"))
+            return;
+        PlayerController player = other.GetComponent<PlayerController>();
+        player.Damaged(10);
+        player.KnockBack(transform.position);
+    }
 }
