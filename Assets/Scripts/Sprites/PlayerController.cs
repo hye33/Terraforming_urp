@@ -183,7 +183,7 @@ public class PlayerController : MonoBehaviour
         Managers.Game.AutoSaveNum = idx;
     }
 
-    private void Start()
+    private void Awake()
     {
         Init();
         ResetState();
@@ -710,6 +710,11 @@ public class PlayerController : MonoBehaviour
         _explode.GetComponent<Explode>().Exploding();
         yield return new WaitForSecondsRealtime(0.5f);
         _isExploding = false;
+    }
+
+    public void SetCanMakeSavePoint(bool active)
+    {
+        _canMakeSavepoint = active;
     }
 
     private void SettingSavePoint()
