@@ -128,6 +128,16 @@ public class InputManager
             }
         }
         else pressKey[(int)Define.KeyEvent.E] = false;
+
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            if (!pressKey[(int)Define.KeyEvent.Tab] && UIKeyAction != null)
+            {
+                pressKey[(int)Define.KeyEvent.Tab] = true;
+                UIKeyAction.Invoke(Define.KeyEvent.Tab);
+            }
+        }
+        else pressKey[(int)Define.KeyEvent.Tab] = false;
     }
 
     public void OnFixedUpdate()

@@ -8,10 +8,11 @@ using UnityEngine.UI;
 public class UI_Record : UI_Popup
 {
     Dictionary<int, bool> getRecords;
+    GameObject prevSelected;
     enum GameObjects
     {
         SelectedTMP,
-        InforationTMP,
+        InformationTMP,
         SelectedImg,
         Content,
         Exit,
@@ -35,25 +36,40 @@ public class UI_Record : UI_Popup
         {
             int ID = record.Key;
             GameObject current = GetObject((int)GameObjects.Content).transform.GetChild(i).gameObject;
-            i++;
 
+            current.SetActive(true);
             var objectData = Managers.Data.ObjectDict[ID];
-            Debug.Log(objectData);
 
             string path = "UI/RecordObjects/" + objectData.Image;
             current.transform.Find("Img").GetComponent<Image>().sprite = Resources.Load<Sprite>(path);
-            current.transform.Find("Text").GetComponent<Text>().text = objectData.Title;
+            current.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = objectData.Title;
+            current.transform.Find("SelectedFrame").gameObject.SetActive(false);
+            current.transform.Find("UnSelectedFrame").gameObject.SetActive(true);
 
-            current.BindEvent((PointerEventData data) => ObjectSelect(data, objectData));
+            current.BindEvent((PointerEventData data) => ObjectSelect(data, objectData, current));
+            Debug.Log(current.gameObject.name);
             i++;
         }
+        GetObject((int)GameObjects.Exit).BindEvent(Close);
     }
 
-    private void ObjectSelect(PointerEventData data, ObjectData objectData)
+    private void ObjectSelect(PointerEventData data, ObjectData objectData, GameObject current)
     {
+        Debug.Log(objectData.Title);
         GetObject((int)GameObjects.SelectedTMP).GetComponent<TextMeshProUGUI>().text = objectData.Title;
-        GetObject((int)GameObjects.InforationTMP).GetComponent<TextMeshProUGUI>().text = objectData.Explain;
+        GetObject((int)GameObjects.InformationTMP).GetComponent<TextMeshProUGUI>().text = objectData.Explain;
         GetObject((int)GameObjects.SelectedImg).GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/RecordObjects/" + objectData.Image);
+
+        current.transform.Find("SelectedFrame").gameObject.SetActive(true);
+        current.transform.Find("UnSelectedFrame").gameObject.SetActive(false);
+
+        if(prevSelected != null && prevSelected != current)
+        {
+            prevSelected.transform.Find("SelectedFrame").gameObject.SetActive(false);
+            prevSelected.transform.Find("UnSelectedFrame").gameObject.SetActive(true);
+        }
+
+        prevSelected = current;
     }
 
     private void InputKey(Define.KeyEvent key)
@@ -72,7 +88,10 @@ public class UI_Record : UI_Popup
     }
     private void Close(PointerEventData data)
     {
+        Debug.Log("Close Called in Ui_Record");
         Managers.UI.ClosePopupUI(this);
+        Managers.Input.UIKeyAction -= InputKey;
+        Time.timeScale = 1;
     }
 
 }
