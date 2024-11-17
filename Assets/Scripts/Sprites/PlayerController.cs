@@ -157,6 +157,8 @@ public class PlayerController : MonoBehaviour
         _bulletChargeCount = 0;
         _sword.isSwing = false;
 
+        _hasSlow = false;
+
         // // spine reset
         // ChangeSkin((int)PlayerSkinEnum.Sword);
         // PlayLoopAnim((int)PlayerAnimEnum.Idle * 2 + (int)_weaponType, 0);
@@ -328,8 +330,11 @@ public class PlayerController : MonoBehaviour
         Hp = Mathf.Clamp(_hp + heal, 0, _maxHp);
     }
 
+    private bool _hasSlow = false;
     public void Slow(float duration, float percentage)
     {
+        if (_hasSlow) return;
+        _hasSlow = true;
         StartCoroutine(coSlow(duration, percentage, _moveSpeed));
     }
 
@@ -338,6 +343,7 @@ public class PlayerController : MonoBehaviour
         _moveSpeed = defaultMoveSpeed * percentage;
         yield return new WaitForSeconds(duration);
         _moveSpeed = defaultMoveSpeed;
+        _hasSlow = false;
     }
 
     // 피격시 넉백 효과
@@ -416,6 +422,8 @@ public class PlayerController : MonoBehaviour
 
     private void Resurrent()
     {
+        _moveSpeed = Stat.PLAYER_MOVE_SPEED;
+        _hasSlow = false;
         _currentAnimState = PlayerAnimEnum.Idle;
         PlayAnimation(PlayerAnimEnum.Idle);
         if (decreaseLife != null)
