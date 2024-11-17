@@ -399,6 +399,7 @@ public class PlayerController : MonoBehaviour
         _stopMove = true;
         _currentState = PlayerState.Die;
         rb.velocity = Vector2.zero;
+        Managers.Sound.Stop(Define.Sound.LoopEffect);
         //PlayOneShotAnim((int)PlayerAnimEnum.Die * 2 + (int)_weaponType, false, true, true, 0);
         _currentAnimState = PlayerAnimEnum.Die;
         PlayAnimation(PlayerAnimEnum.Die);
