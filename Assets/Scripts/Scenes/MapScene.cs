@@ -130,7 +130,8 @@ public class MapScene : MonoBehaviour
         switch (key)
         {
             case Define.KeyEvent.Esc:
-                if (_pauseUI == null && _puzzleUI == null && _recordUI == null)
+                //if (_pauseUI == null && _puzzleUI == null && _recordUI == null)
+                if(Time.timeScale != 0)
                 {
                     _pauseUI = Managers.UI.ShowPopupUI<UI_Pause>("PauseUI");
                     Managers.UI.SetCanvas(_pauseUI.gameObject);
@@ -145,6 +146,7 @@ public class MapScene : MonoBehaviour
 
             case Define.KeyEvent.Tab:
                 Debug.Log(_recordUI);
+                Debug.Log(_pauseUI);
                 if (_pauseUI == null && _recordUI == null)
                 {
                     _recordUI = Managers.UI.ShowPopupUI<UI_Record>("RecordUI");

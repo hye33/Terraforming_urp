@@ -15,7 +15,7 @@ public class PuzzleLock : MonoBehaviour
     [SerializeField]
     private GameObject downTarget;
 
-    private Sign sign;
+    private UI_Message sign;
 
     GameObject upObject;
     GameObject downObject;
@@ -92,10 +92,8 @@ public class PuzzleLock : MonoBehaviour
         {
             if (sign == null)
             {
-                sign = Managers.UI.ShowPopupUI<Sign>("Sign");
-                sign.ID = 0;
+                sign = Managers.UI.ShowPopupUI<UI_Message>("MessageUI");
                 sign.Check = false;
-                sign.Init();
                 sign.ShowMessage(message);
             }
         }
@@ -125,8 +123,7 @@ public class PuzzleLock : MonoBehaviour
         Debug.Log(objectName);
 
         // 문열림 메시지 출력
-        sign = Managers.UI.ShowPopupUI<Sign>("Sign");
-        sign.ID = 0;
+        sign = Managers.UI.ShowPopupUI<UI_Message>("MessageUI");
         sign.Check = false;
         sign.Init();
         sign.ShowMessage("문이 열리는 소리가 들린다.");

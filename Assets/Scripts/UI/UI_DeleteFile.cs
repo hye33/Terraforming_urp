@@ -23,7 +23,8 @@ public class UI_DeleteFile : UI_Popup
         NoBtn,
         YesBtn,
         YesImg,
-        NoImg
+        NoImg,
+        DeleteTMP
     }
 
     private void Awake()
@@ -65,7 +66,9 @@ public class UI_DeleteFile : UI_Popup
     {
         Managers.Game.DeleteGameData(_fileNumber);
         _loadFileInstance.RefreshUI();
-        GetObject((int)GameObjects.TMP).GetComponent<TextMeshProUGUI>().text = text;
+        //GetObject((int)GameObjects.TMP).GetComponent<TextMeshProUGUI>().text = text;
+        GetObject((int)GameObjects.TMP).SetActive(false);
+        GetObject((int)GameObjects.DeleteTMP).SetActive(true);
         GetObject((int)GameObjects.NoBtn).SetActive(false);
         GetObject((int)GameObjects.YesBtn).SetActive(false);
         StartCoroutine("CloseLate");
