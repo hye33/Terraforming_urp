@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
     private bool _canHit;
     private bool _isTakeDowning;
     private bool _isExploding;
-    private bool _canDash;
     private int _maxBullet = 2;
     private int _shootCount;
     private float _coolTime = 5.0f;
@@ -144,7 +143,6 @@ public class PlayerController : MonoBehaviour
         _canHit = true;
         _isTakeDowning = false;
         _isExploding = false;
-        _canDash = true;
         _getKeyS = false;
         _standOnPlatform = false;
         _stopMove = false; // Set True when Shoot or Death state
@@ -153,11 +151,13 @@ public class PlayerController : MonoBehaviour
 
         _currentState = PlayerState.Idle;
 
-        _gun._aim.gameObject.SetActive(_weaponType == Define.PlayerWeapon.Gun);
+        _gun.SetShowAnim(_weaponType == Define.PlayerWeapon.Gun);
 
         _gun.Reset();
         _bulletChargeCount = 0;
         _sword.isSwing = false;
+
+        _hasSlow = false;
 
         // // spine reset
         // ChangeSkin((int)PlayerSkinEnum.Sword);
@@ -183,7 +183,7 @@ public class PlayerController : MonoBehaviour
         Managers.Game.AutoSaveNum = idx;
     }
 
-    private void Start()
+    private void Awake()
     {
         Init();
         ResetState();
@@ -330,8 +330,11 @@ public class PlayerController : MonoBehaviour
         Hp = Mathf.Clamp(_hp + heal, 0, _maxHp);
     }
 
+    private bool _hasSlow = false;
     public void Slow(float duration, float percentage)
     {
+        if (_hasSlow) return;
+        _hasSlow = true;
         StartCoroutine(coSlow(duration, percentage, _moveSpeed));
     }
 
@@ -340,6 +343,7 @@ public class PlayerController : MonoBehaviour
         _moveSpeed = defaultMoveSpeed * percentage;
         yield return new WaitForSeconds(duration);
         _moveSpeed = defaultMoveSpeed;
+        _hasSlow = false;
     }
 
     // 피격시 넉백 효과
@@ -401,6 +405,7 @@ public class PlayerController : MonoBehaviour
         _stopMove = true;
         _currentState = PlayerState.Die;
         rb.velocity = Vector2.zero;
+        Managers.Sound.Stop(Define.Sound.LoopEffect);
         //PlayOneShotAnim((int)PlayerAnimEnum.Die * 2 + (int)_weaponType, false, true, true, 0);
         _currentAnimState = PlayerAnimEnum.Die;
         PlayAnimation(PlayerAnimEnum.Die);
@@ -417,6 +422,8 @@ public class PlayerController : MonoBehaviour
 
     private void Resurrent()
     {
+        _moveSpeed = Stat.PLAYER_MOVE_SPEED;
+        _hasSlow = false;
         _currentAnimState = PlayerAnimEnum.Idle;
         PlayAnimation(PlayerAnimEnum.Idle);
         if (decreaseLife != null)
@@ -480,7 +487,6 @@ public class PlayerController : MonoBehaviour
             return;
         if (_jumpCount == 1 && _unlockDoubleJump == false)
             return;
-        _canDash = false;
         _shadow.SetActive(false);
         _currentAnimState = PlayerAnimEnum.Jump;
         PlayAnimation(PlayerAnimEnum.Jump);
@@ -508,9 +514,7 @@ public class PlayerController : MonoBehaviour
 
     private void Dash()
     {
-        if (_canDash == false)
-            return;
-        _canDash = false;
+        if (_currentState != PlayerState.Jump) return;
 
         Vector3 posOffset = new Vector3(0.5f, 0.5f, 0);
         GameObject go = Instantiate(_dashSmokePrefab);
@@ -551,7 +555,6 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(t);
         Destroy(go);
-        _canDash = true;
     }
 
     private IEnumerator coSetActiveTimer(GameObject go, bool active, float t)
@@ -586,6 +589,7 @@ public class PlayerController : MonoBehaviour
     #region Attack and Skills
     private void Attack()
     {
+        Managers.Sound.Stop(Define.Sound.LoopEffect);
         if (_weaponType == Define.PlayerWeapon.Sword)
         {
             if (_sword.isSwing)
@@ -611,6 +615,7 @@ public class PlayerController : MonoBehaviour
             if (_shootCount == 0)
                 return;
 
+            _currentState = PlayerState.Shoot;
             _currentAnimState = PlayerAnimEnum.Hit;
             PlayAnimation(PlayerAnimEnum.Hit);
             StartCoroutine(coShooting());
@@ -667,7 +672,7 @@ public class PlayerController : MonoBehaviour
             //ChangeSkin((int)PlayerSkinEnum.Sword);
             _weaponType = Define.PlayerWeapon.Sword;
         }
-        _gun._aim.gameObject.SetActive(_weaponType == Define.PlayerWeapon.Gun);
+        _gun.SetShowAnim(_weaponType == Define.PlayerWeapon.Gun);
         animator.SetInteger("Weapon", (int)_weaponType);
         PlayAnimation(_currentAnimState);
 
@@ -705,6 +710,11 @@ public class PlayerController : MonoBehaviour
         _explode.GetComponent<Explode>().Exploding();
         yield return new WaitForSecondsRealtime(0.5f);
         _isExploding = false;
+    }
+
+    public void SetCanMakeSavePoint(bool active)
+    {
+        _canMakeSavepoint = active;
     }
 
     private void SettingSavePoint()
@@ -771,7 +781,6 @@ public class PlayerController : MonoBehaviour
         if (_currentState == PlayerState.Jump)
         {
             _shadow.SetActive(true);
-            _canDash = true;
             Managers.Sound.Play(_landingAudio, Define.Sound.Effect);
             _currentState = PlayerState.None;
             animator.SetBool("IsJumping", false);

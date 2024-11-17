@@ -67,8 +67,10 @@ public class PlayerSword : MonoBehaviour
     {
         if (target != null && target.Length > 0)
         {
+            PlayerController _player = GetComponentInParent<PlayerController>();
             for (int i = target.Length - 1; i >= 0; i--)
             {
+                _player.AddChargeBulletCount();
                 Enemy enemy = target[i].GetComponent<Enemy>();
                 yield return new WaitForSeconds(0.3f);
                 enemy.Damaged(Managers.Game.SaveData.playerMeleeDamage, gameObject);
@@ -83,8 +85,10 @@ public class PlayerSword : MonoBehaviour
     {
         if (target != null && target.Length > 0)
         {
+            PlayerController _player = GetComponentInParent<PlayerController>();
             for (int i = target.Length - 1; i >= 0; i--)
             {
+                _player.AddChargeBulletCount();
                 Boss boss = target[i].GetComponent<Boss>();
                 yield return new WaitForSeconds(0.3f);
                 boss.Damaged(Managers.Game.SaveData.playerMeleeDamage, gameObject);

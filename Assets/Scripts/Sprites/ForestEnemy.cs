@@ -107,7 +107,7 @@ public class ForestEnemy : Enemy
 
         Collider2D hit = Physics2D.OverlapBox(
             transform.position + Vector3.forward * transform.localScale.x,
-            Vector2.one * 1.5f, 0, LayerMask.GetMask("Player"));
+            Vector2.one * 2.5f, 0, LayerMask.GetMask("Player"));
         if (hit != null)
         {
             yield return new WaitForSecondsRealtime(0.3f);
@@ -286,5 +286,16 @@ public class ForestEnemy : Enemy
         if (hits == null)
             return;
         hits.GetComponent<PlayerController>().Damaged(Damage, gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (_type != Define.ForestEnemyType.Forest02) return;
+        if (State == Define.EnemyState.Death) return;
+        if (!other.gameObject.CompareTag("Player"))
+            return;
+        PlayerController player = other.GetComponent<PlayerController>();
+        player.Damaged(10);
+        player.KnockBack(transform.position);
     }
 }

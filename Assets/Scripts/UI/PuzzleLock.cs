@@ -51,6 +51,8 @@ public class PuzzleLock : MonoBehaviour
             {
                 HandleLock(miniBossChecking);
             }
+            // 세이브 포인트 생성 불가 업데이트
+            player.GetComponent<PlayerController>().SetCanMakeSavePoint(false);
         }
     }
     private void HandleLock(bool isSolved)
@@ -131,6 +133,9 @@ public class PuzzleLock : MonoBehaviour
 
         // 문 열린 후 trigger 제거
         GetComponent<BoxCollider2D>().gameObject.SetActive(false);
+
+        // 세이브 포인트 생성 가능하게 업데이트
+        player.GetComponent<PlayerController>().SetCanMakeSavePoint(true);
 
         // 변수 업데이트 및 게임 저장 데이터 업데이트
         if (objectName == "PuzzleLock")
