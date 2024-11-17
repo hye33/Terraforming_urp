@@ -22,6 +22,7 @@ public class PlayerGun : MonoBehaviour
     private void Awake()
     {
         Init();
+        Debug.Log("gun init");
     }
 
     private void Init()
@@ -35,7 +36,14 @@ public class PlayerGun : MonoBehaviour
 
     public void Reset()
     {
+        if (_aimSprite == null) Init();
         _aimSprite.color = ableColor;
+    }
+
+    public void SetShowAnim(bool show)
+    {
+        if (_aim == null) Init();
+        _aim.gameObject.SetActive(show);
     }
 
     private void Update()

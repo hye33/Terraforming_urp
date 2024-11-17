@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
 
         _currentState = PlayerState.Idle;
 
-        _gun._aim.gameObject.SetActive(_weaponType == Define.PlayerWeapon.Gun);
+        _gun.SetShowAnim(_weaponType == Define.PlayerWeapon.Gun);
 
         _gun.Reset();
         _bulletChargeCount = 0;
@@ -672,7 +672,7 @@ public class PlayerController : MonoBehaviour
             //ChangeSkin((int)PlayerSkinEnum.Sword);
             _weaponType = Define.PlayerWeapon.Sword;
         }
-        _gun._aim.gameObject.SetActive(_weaponType == Define.PlayerWeapon.Gun);
+        _gun.SetShowAnim(_weaponType == Define.PlayerWeapon.Gun);
         animator.SetInteger("Weapon", (int)_weaponType);
         PlayAnimation(_currentAnimState);
 
