@@ -203,6 +203,7 @@ public abstract class Enemy : SpineAnimHandler
 
     protected void FlipSprite(float dir)
     {
+        if (State == Define.EnemyState.Death) return;
         transform.localScale = new Vector3(-dir * _localSize, _localSize, 1);
         _hpBar.transform.localScale = new Vector3(-dir, 1, 1);
     }

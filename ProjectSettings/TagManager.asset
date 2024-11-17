@@ -11,6 +11,7 @@ TagManager:
   - Puzzle
   - DeathTrigger
   - Bound
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - ItemObject
   - Puzzle
   - Player
-  - 
+  - PlayerWeapon
   - 
   - Enemy
   - Boss
