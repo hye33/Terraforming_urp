@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
     private bool _canHit;
     private bool _isTakeDowning;
     private bool _isExploding;
-    private bool _canDash;
     private int _maxBullet = 2;
     private int _shootCount;
     private float _coolTime = 5.0f;
@@ -144,7 +143,6 @@ public class PlayerController : MonoBehaviour
         _canHit = true;
         _isTakeDowning = false;
         _isExploding = false;
-        _canDash = true;
         _getKeyS = false;
         _standOnPlatform = false;
         _stopMove = false; // Set True when Shoot or Death state
@@ -480,7 +478,6 @@ public class PlayerController : MonoBehaviour
             return;
         if (_jumpCount == 1 && _unlockDoubleJump == false)
             return;
-        _canDash = false;
         _shadow.SetActive(false);
         _currentAnimState = PlayerAnimEnum.Jump;
         PlayAnimation(PlayerAnimEnum.Jump);
@@ -508,9 +505,7 @@ public class PlayerController : MonoBehaviour
 
     private void Dash()
     {
-        if (_canDash == false)
-            return;
-        _canDash = false;
+        if (_currentState != PlayerState.Jump) return;
 
         Vector3 posOffset = new Vector3(0.5f, 0.5f, 0);
         GameObject go = Instantiate(_dashSmokePrefab);
@@ -551,7 +546,6 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(t);
         Destroy(go);
-        _canDash = true;
     }
 
     private IEnumerator coSetActiveTimer(GameObject go, bool active, float t)
@@ -771,7 +765,6 @@ public class PlayerController : MonoBehaviour
         if (_currentState == PlayerState.Jump)
         {
             _shadow.SetActive(true);
-            _canDash = true;
             Managers.Sound.Play(_landingAudio, Define.Sound.Effect);
             _currentState = PlayerState.None;
             animator.SetBool("IsJumping", false);
