@@ -580,6 +580,7 @@ public class PlayerController : MonoBehaviour
     #region Attack and Skills
     private void Attack()
     {
+        Managers.Sound.Stop(Define.Sound.LoopEffect);
         if (_weaponType == Define.PlayerWeapon.Sword)
         {
             if (_sword.isSwing)
@@ -605,6 +606,7 @@ public class PlayerController : MonoBehaviour
             if (_shootCount == 0)
                 return;
 
+            _currentState = PlayerState.Shoot;
             _currentAnimState = PlayerAnimEnum.Hit;
             PlayAnimation(PlayerAnimEnum.Hit);
             StartCoroutine(coShooting());
