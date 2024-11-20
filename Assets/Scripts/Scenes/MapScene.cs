@@ -70,12 +70,18 @@ public class MapScene : MonoBehaviour
         {
             case (int)Define.LoadMap.ForestMap:
                 map = (GameObject)Instantiate(Resources.Load("Prefabs/Sprites/ForestMap"), transform);
+                _player = FindObjectOfType<PlayerController>();
                 Managers.Sound.Play(forestBgm, Define.Sound.Bgm);
-                //_player.transform.position = _playerInitPos;
+                //_player.transform.position = _playerInitPos;                
+                Debug.Log("Managers.Game.SaveData.bossDie " + Managers.Game.SaveData.bossDie);
+                if (Managers.Game.SaveData.bossDie || Managers.Game.SaveData.enterBossStage && !Managers.Game.SaveData.bossDie)
+                    _player.transform.position = new Vector3(133.5f, -4.0f, 0);
                 break;
             case (int)Define.LoadMap.ForestBoss:
                 map = (GameObject)Instantiate(Resources.Load("Prefabs/Sprites/ForestBossMap"), transform);
+                _player = FindObjectOfType<PlayerController>();
                 Managers.Sound.Play(forestBossBgm, Define.Sound.Bgm);
+                Managers.Game.SaveData.enterBossStage = true;
                 //_player.transform.position = new Vector3(0, 0, 0);
                 break;
         }
@@ -89,8 +95,6 @@ public class MapScene : MonoBehaviour
 
         UI_Character characterUI = Managers.UI.ShowSceneUI<UI_Character>("CharacterUI");
         Managers.UI.SetCanvas(characterUI.gameObject);
-
-        _player = FindObjectOfType<PlayerController>();
 
         // 저장된 데이터 불러오기
         _terraformingGauge = Managers.Game.SaveData.terraformingGauge;
@@ -108,7 +112,8 @@ public class MapScene : MonoBehaviour
 
         _enemySpawners = FindObjectsOfType<EnemySpawner>();
         _globalVolume = FindObjectOfType<Volume>();
-        _globalVolume.profile.TryGet(out _vignette);
+        if (_globalVolume != null)
+            _globalVolume.profile.TryGet(out _vignette);
 
         for (int i = 0; i < (int)Define.ForestEnemyType.MaxCount; i++)
         {
@@ -237,6 +242,7 @@ public class MapScene : MonoBehaviour
                 Managers.Game.SaveData.terraformingGauge = _terraformingGauge;
                 break;
         }
+        Debug.Log(_terraformingGauge);
 
         if (_terraformingGauge >= 100)
         {

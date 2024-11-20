@@ -7,6 +7,7 @@ using Spine.Unity;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 
 public class PlayerController : MonoBehaviour
@@ -442,8 +443,13 @@ public class PlayerController : MonoBehaviour
             decreaseLife.Invoke();
         ResetState();
         gameObject.SetActive(true);
-        Managers.Game.SetGameDataToSaved();
-        transform.position = Managers.Game.SaveData.playerPosition;
+        if (Managers.Game.SaveData.enterBossStage)
+            SceneManager.LoadScene("Forest");
+        else
+        {
+            Managers.Game.SetGameDataToSaved();
+            transform.position = Managers.Game.SaveData.playerPosition;
+        }
     }
     #endregion
 

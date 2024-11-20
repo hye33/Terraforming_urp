@@ -20,6 +20,8 @@ public class GameManagerEx
         bool[] getSkill;
         public bool puzzleSolved = false; // 퍼즐 풀었는지 확인
         public bool miniBossDie = false; // 동굴 미니 보스 죽었는지 확인
+        public bool bossDie = false; // 보스 죽었는지 확인
+        public bool enterBossStage = false; // 보스전 진입 여부 확인
         public Dictionary<int,bool> getRelic = new Dictionary<int,bool>(); // 플레이어가 획득한 유물
         public Dictionary<int, bool> getRecord = new Dictionary<int, bool>(); // 플레이어가 조사한 것들
         public int[] Enhancement = new int[2] { 5, 5 }; // 무기 강화 수치
