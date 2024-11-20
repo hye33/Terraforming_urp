@@ -109,7 +109,7 @@ public class ForestBoss : Boss
     {
         Managers.Game.SaveData.bossDie = true;
         Managers.Game.SaveData.enterBossStage = false;
-        _scene.UpdateTerraformingGauge(10, "Boss");
+        _scene.UpdateTerraformingGauge(20, "Boss");
         SceneManager.LoadScene("Forest");
     }
 
