@@ -531,7 +531,7 @@ public class PlayerController : MonoBehaviour
         // 얘 나중에 위쪽으로 빼두기
         float distance = 6.0f;
         bool isFlip = Mathf.Sign(transform.localScale.x) < 0;
-        rb.AddForce((Mathf.Sign(transform.localScale.x) > 0 ? Vector3.right : Vector3.left) * 21.0f, ForceMode2D.Impulse);
+        rb.AddForce((Mathf.Sign(transform.localScale.x) > 0 ? Vector3.right : Vector3.left) * 10.0f, ForceMode2D.Impulse);
 
         
         // float distanceOffset = 0.5f;
