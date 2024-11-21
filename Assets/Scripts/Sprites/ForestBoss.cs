@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using Spine.Unity;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ForestBoss : Boss
 {
     protected enum BossAnimState { Idle, Blink, Hit_wall_L, Hit_wall_R, Hit_wall_C, ThornBullet, Laser, SpiderEgg }
+
+    [SerializeField] MapScene _scene;
 
     PlayerController _player;
     CameraController _camera;
@@ -68,6 +71,8 @@ public class ForestBoss : Boss
         base.Awake();
         base.BaseInit();
 
+        _scene = FindObjectOfType<MapScene>();
+
         _rb = GetComponent<Rigidbody2D>();
         _player = FindObjectOfType<PlayerController>();
         _camera = Camera.main.GetComponent<CameraController>();
@@ -102,7 +107,10 @@ public class ForestBoss : Boss
     }
     public override void Death()
     {
-        
+        Managers.Game.SaveData.bossDie = true;
+        Managers.Game.SaveData.enterBossStage = false;
+        _scene.UpdateTerraformingGauge(20, "Boss");
+        SceneManager.LoadScene("Forest");
     }
 
     private void FixedUpdate()

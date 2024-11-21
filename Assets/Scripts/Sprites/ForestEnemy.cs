@@ -26,7 +26,7 @@ public class ForestEnemy : Enemy
 
     private float _time;
     private float _explodeTime = 2.0f;
-    private WaitForSecondsRealtime waitExplodeTick;
+    private WaitForSeconds waitExplodeTick;
     private float _explodeTick = 0.1f;
 
     private float _knockBackPower = 6.0f;
@@ -58,7 +58,7 @@ public class ForestEnemy : Enemy
             case Define.ForestEnemyType.Forest03:
                 break;
             case Define.ForestEnemyType.Forest04:
-                waitExplodeTick = new WaitForSecondsRealtime(_explodeTick);
+                waitExplodeTick = new WaitForSeconds(_explodeTick);
                 _time = 0.0f;
                 break;
         }
@@ -99,7 +99,7 @@ public class ForestEnemy : Enemy
 
     private IEnumerator coCommonAttack()
     {
-        yield return new WaitForSecondsRealtime(0.2f);
+        yield return new WaitForSeconds(0.2f);
         if (State == Define.EnemyState.Death)
             yield break;
         _currentAnimState = AnimState.Hit;
@@ -110,14 +110,14 @@ public class ForestEnemy : Enemy
             Vector2.one * 2.5f, 0, LayerMask.GetMask("Player"));
         if (hit != null)
         {
-            yield return new WaitForSecondsRealtime(0.3f);
+            yield return new WaitForSeconds(0.3f);
             hit.GetComponent<PlayerController>().Damaged(Damage, gameObject);
             Player.GetComponent<Rigidbody2D>().AddForce(
                 new Vector2(Mathf.Sign(Player.transform.position.x - transform.position.x) * _knockBackPower, 0), ForceMode2D.Impulse);
             if (Util.checkProbability(50))
                 Player.GetComponent<PlayerController>().Slow(3.0f, 0.7f);
         }
-        yield return new WaitForSecondsRealtime(1.2f);
+        yield return new WaitForSeconds(1.2f);
 
         if (State != Define.EnemyState.Death)
             State = Define.EnemyState.Idle;
@@ -175,11 +175,11 @@ public class ForestEnemy : Enemy
     {
         ChangeSkin(0);
         FlipSprite(Mathf.Sign(Player.transform.position.x - transform.position.x));
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSeconds(0.5f);
         float distX = Player.transform.position.x - transform.position.x;
         FlipSprite(Mathf.Sign(distX));
         PlayOneShotAnim((int)EnemyAnimEnum.Extra1);
-        yield return new WaitForSecondsRealtime(0.2f);
+        yield return new WaitForSeconds(0.2f);
         rb.AddForce(new Vector2(distX * 0.5f, 10.0f), ForceMode2D.Impulse);
         yield return new WaitWhile(() => CheckStandGround());
         yield return new WaitUntil(() => CheckStandGround());
@@ -188,7 +188,7 @@ public class ForestEnemy : Enemy
             transform.position, new Vector2(4.0f, 3.0f), 0, LayerMask.GetMask("Player"));
         if (hits != null)
         {
-            yield return new WaitForSecondsRealtime(0.3f);
+            yield return new WaitForSeconds(0.3f);
             hits.GetComponent<PlayerController>().Damaged(Damage, gameObject);
             Player.GetComponent<Rigidbody2D>().AddForce(
                 new Vector2(Mathf.Sign(Player.transform.position.x - transform.position.x) * _knockBackPower, 0), ForceMode2D.Impulse);
@@ -206,7 +206,7 @@ public class ForestEnemy : Enemy
     {
         ChangeSkin(1);
         FlipSprite(Mathf.Sign(Player.transform.position.x - transform.position.x));
-        yield return new WaitForSecondsRealtime(0.2f);
+        yield return new WaitForSeconds(0.2f);
         if (State == Define.EnemyState.Death)
             yield break;
         _currentAnimState = AnimState.Hit;
@@ -217,13 +217,13 @@ public class ForestEnemy : Enemy
             Vector2.one * 2.0f, 0, LayerMask.GetMask("Player"));
         if (hit != null)
         {
-            yield return new WaitForSecondsRealtime(0.3f);
+            yield return new WaitForSeconds(0.3f);
             hit.GetComponent<PlayerController>().Damaged(Damage, gameObject);
             Player.GetComponent<Rigidbody2D>().AddForce(
                 new Vector2(Mathf.Sign(Player.transform.position.x - transform.position.x) * _knockBackPower, 0), ForceMode2D.Impulse);
         }
 
-        yield return new WaitForSecondsRealtime(1.2f);
+        yield return new WaitForSeconds(1.2f);
 
         if (State != Define.EnemyState.Death)
             State = Define.EnemyState.Idle;

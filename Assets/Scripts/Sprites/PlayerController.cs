@@ -7,6 +7,7 @@ using Spine.Unity;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 
 public class PlayerController : MonoBehaviour
@@ -442,8 +443,13 @@ public class PlayerController : MonoBehaviour
             decreaseLife.Invoke();
         ResetState();
         gameObject.SetActive(true);
-        Managers.Game.SetGameDataToSaved();
-        transform.position = Managers.Game.SaveData.playerPosition;
+        if (Managers.Game.SaveData.enterBossStage)
+            SceneManager.LoadScene("Forest");
+        else
+        {
+            Managers.Game.SetGameDataToSaved();
+            transform.position = Managers.Game.SaveData.playerPosition;
+        }
     }
     #endregion
 
@@ -525,7 +531,7 @@ public class PlayerController : MonoBehaviour
         // 얘 나중에 위쪽으로 빼두기
         float distance = 6.0f;
         bool isFlip = Mathf.Sign(transform.localScale.x) < 0;
-        rb.AddForce((Mathf.Sign(transform.localScale.x) > 0 ? Vector3.right : Vector3.left) * 21.0f, ForceMode2D.Impulse);
+        rb.AddForce((Mathf.Sign(transform.localScale.x) > 0 ? Vector3.right : Vector3.left) * 10.0f, ForceMode2D.Impulse);
 
         
         // float distanceOffset = 0.5f;

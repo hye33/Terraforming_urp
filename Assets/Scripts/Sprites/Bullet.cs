@@ -93,14 +93,14 @@ public class Bullet : MonoBehaviour
                     return;
                 }
                 enemy.Damaged(_damage);
+                Destroy(gameObject);
             }
             else if (other.CompareTag("Boss"))
             {
                 Boss boss = other.GetComponent<Boss>();
                 boss.Damaged(_damage, gameObject);
+                Destroy(gameObject);
             }
-
-            Destroy(gameObject);
         }
         
         if (!_isPlayer && other.CompareTag("Player"))
