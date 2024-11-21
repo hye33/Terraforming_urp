@@ -72,7 +72,8 @@ public class MapScene : MonoBehaviour
                 map = (GameObject)Instantiate(Resources.Load("Prefabs/Sprites/ForestMap"), transform);
                 _player = FindObjectOfType<PlayerController>();
                 Managers.Sound.Play(forestBgm, Define.Sound.Bgm);
-                //_player.transform.position = _playerInitPos;                
+                //_player.transform.position = _playerInitPos;
+                _player.transform.position = Managers.Game.SaveData.playerPosition;
                 Debug.Log("Managers.Game.SaveData.bossDie " + Managers.Game.SaveData.bossDie);
                 if (Managers.Game.SaveData.bossDie || Managers.Game.SaveData.enterBossStage && !Managers.Game.SaveData.bossDie)
                     _player.transform.position = new Vector3(133.5f, -4.0f, 0);
