@@ -70,9 +70,10 @@ public class UI_Setting : UI_Popup
         //현재 해상도 가져오기
         Resolution currentResolution = Screen.currentResolution;
         string currentResolutionString = currentResolution.width + "x" + currentResolution.height;
+        Debug.Log($"현재 해상도: {currentResolutionString}");
 
         List<string> options = new List<string>();
-        int currentResolutionIndex = 0;
+        int currentResolutionIndex = -1;
         for (int i = 0; i < resolutions.Count; i++)
         {
             //resolutions.Add(new Resolution { width = settings[i,0], height = settings[i,1] });
@@ -88,10 +89,16 @@ public class UI_Setting : UI_Popup
         }
 
         resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
         if (currentResolutionIndex != -1)
         {
+            resolutionDropdown.value = currentResolutionIndex;
             resolutionDropdown.captionText.text = currentResolutionString; // 레이블에 현재 해상도 표시
+        }
+        else
+        {
+            // 현재 해상도가 리스트에 없을 경우 기본값으로 첫 번째 설정
+            resolutionDropdown.value = 0;
+            resolutionDropdown.captionText.text = options[0];
         }
 
         resolutionDropdown.RefreshShownValue();
