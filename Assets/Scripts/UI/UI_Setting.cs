@@ -133,7 +133,9 @@ public class UI_Setting : UI_Popup
     private void SetResolution(int index)
     {
         Debug.Log("ChangeResolution - " + resolutionDropdown.options[index].text);
-        resolutionIndex = index;
+        resolutionIndex = index; 
+        resolutionDropdown.captionText.text = resolutionDropdown.options[index].text;
+        resolutionDropdown.RefreshShownValue();
     }
 
     private void SetTextColor(PointerEventData data)
