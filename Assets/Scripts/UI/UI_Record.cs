@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class UI_Record : UI_Popup
 {
-    Dictionary<int, bool> getRecords;
+    List<int> getRecords;
     GameObject prevSelected;
     enum GameObjects
     {
@@ -32,9 +32,9 @@ public class UI_Record : UI_Popup
         getRecords = Managers.Game.SaveData.getRecord;
 
         int i = 0;
-        foreach (KeyValuePair<int, bool> record in getRecords)
+        foreach ( int record in getRecords)
         {
-            int ID = record.Key;
+            int ID = record;
             GameObject current = GetObject((int)GameObjects.Content).transform.GetChild(i).gameObject;
 
             current.SetActive(true);

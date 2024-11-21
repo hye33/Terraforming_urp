@@ -11,7 +11,7 @@ public class GameManagerEx
     {
         public int playerLife;
         public float playerHp;
-        public Vector3 playerPosition;
+        public Vector3 playerPosition = new Vector3(-5.18f,13.53f,0f);
         public int playerLocalScale; // sprite direction
         public Define.Stage stage;
         Define.StageState stageState;
@@ -22,8 +22,7 @@ public class GameManagerEx
         public bool miniBossDie = false; // 동굴 미니 보스 죽었는지 확인
         public bool bossDie = false; // 보스 죽었는지 확인
         public bool enterBossStage = false; // 보스전 진입 여부 확인
-        public Dictionary<int,bool> getRelic = new Dictionary<int,bool>(); // 플레이어가 획득한 유물
-        public Dictionary<int, bool> getRecord = new Dictionary<int, bool>(); // 플레이어가 조사한 것들
+        public List<int> getRecord = new List<int>(); // 플레이어가 조사한 것들
         public int[] Enhancement = new int[2] { 5, 5 }; // 무기 강화 수치
         public float terraformingGauge; // 총 테라포밍 게이지 
         public float monsterTerraforming; //몬스터로 획득한 테라포밍 게이지

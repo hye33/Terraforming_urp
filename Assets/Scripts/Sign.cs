@@ -35,9 +35,10 @@ public class Sign : UI_Popup
         string information = "";
         if (ID > 0)
         {
-            if (!Managers.Game.SaveData.getRecord.ContainsKey(ID))
+            if (!Managers.Game.SaveData.getRecord.Contains(ID))
             {
-                Managers.Game.SaveData.getRecord.Add(ID, false);
+                Managers.Game.SaveData.getRecord.Add(ID);
+                Debug.Log("Save Data at Sign.cs ");
             }
             information = objectData.Title;
         }

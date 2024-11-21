@@ -6,7 +6,7 @@ using UnityEngine.Timeline;
 
 public class ItemObject : MonoBehaviour
 {
-    Dictionary<int, bool> getRecords;
+    List<int> getRecords;
     Sign sign;
     UI_Message _message;
     private bool _check;
@@ -28,7 +28,7 @@ public class ItemObject : MonoBehaviour
                 _message.ShowMessage("2000");
             }
         }
-        else if (int.TryParse(collider.name, out key) && getRecords.ContainsKey(key))
+        else if (int.TryParse(collider.name, out key) && getRecords.Contains(key))
         { return; }
 
         else if (sign == null)
