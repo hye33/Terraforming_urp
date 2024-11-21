@@ -25,6 +25,7 @@ public class Sign : UI_Popup
 
     public override void Init()
     {
+        Managers.Sound.Stop(Define.Sound.LoopEffect);
         Managers.Input.UIKeyAction -= InputKey;
         Managers.Input.UIKeyAction += InputKey;
 

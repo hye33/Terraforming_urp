@@ -26,7 +26,7 @@ public class Puzzle : UI_Popup
 
     public override void Init()
     {
-        Managers.Sound.Stop(Define.Sound.Effect); // 발소리 재생 중지 
+        Managers.Sound.Stop(Define.Sound.LoopEffect); // 발소리 재생 중지 
         Time.timeScale = 0;
         puzzleLock = GameObject.Find("PuzzleLock").GetComponent<PuzzleLock>();
         scene = FindObjectOfType<MapScene>();

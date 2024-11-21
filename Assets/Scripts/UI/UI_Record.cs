@@ -25,6 +25,7 @@ public class UI_Record : UI_Popup
     }
     public override void Init()
     {
+        Managers.Sound.Stop(Define.Sound.LoopEffect);
         Time.timeScale = 0;
         Managers.Input.UIKeyAction -= InputKey;
         Managers.Input.UIKeyAction += InputKey;

@@ -173,6 +173,7 @@ public class UI_Pause : UI_Popup
     }
     public override void Init()
     {
+        Managers.Sound.Stop(Define.Sound.LoopEffect);
         //_buttonAudio = Resources.Load<AudioClip>("Sounds/Effect/cursor6");
         BindObject(typeof(GameObjects));
         GetObject((int)GameObjects.StartBtn).BindEvent(StartGame);
