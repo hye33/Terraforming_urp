@@ -10,7 +10,6 @@ public class UI_Character : UI_Scene
         HPFill,
         Weapon,
         LifeBar,
-        Bullets,
         Bullet1,
         Bullet2,
         GaugeBar
@@ -28,7 +27,6 @@ public class UI_Character : UI_Scene
 
     private GameObject sword;
     private GameObject gun;
-    private GameObject bullets;
 
     public override void Init()
     {
@@ -63,13 +61,11 @@ public class UI_Character : UI_Scene
 
         sword = weaponChange.transform.Find("Sword").gameObject;
         gun = weaponChange.transform.Find("Gun").gameObject;
-        bullets = GetObject((int)GameObjects.Bullets);
 
         gaugeBarSlider.value = (Managers.Game.SaveData.terraformingGauge / 100f);
 
         //필요없는 오브젝트 비활성화 
         gun.SetActive(false);
-        bullets.SetActive(false);
     }
 
     private void Start()
@@ -111,14 +107,12 @@ public class UI_Character : UI_Scene
             Debug.Log(shootCount);
             sword.SetActive(false);
             gun.SetActive(true);
-            bullets.SetActive(true);
             Charging(shootCount);
         }
         else if (_weaponType == Define.PlayerWeapon.Sword)
         {
             sword.SetActive(true);
             gun.SetActive(false);
-            bullets.SetActive(false);
         }
     }
     private void Charging(int shootCount)
@@ -138,20 +132,6 @@ public class UI_Character : UI_Scene
         float ratio = (float)_player.Life / 4;
         lifeBarSlider.value = ratio;
     }
-
-    /*
-    private void UpdateSkillGuage(Define.ForestEnemyType enemy)
-    {
-        float ratio = (float)scene.KillEnemyCount[(int)enemy] / scene.SkillGuage[(int)enemy];
-        Debug.Log("Skill Gauge Ratio => " + ratio);
-        skillBarSlider.value = ratio;
-        /*
-        if (updateCoroutine != null) StopCoroutine(updateCoroutine);
-        updateCoroutine = StartCoroutine(SmoothUpdate(ratio, skillBarSlider));
-        
-
-    }
-*/
     private void UpdateTerraformingGauge(float gauge)
     {
         Debug.Log("TerraforomingGauge Update" + gauge);

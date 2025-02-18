@@ -180,7 +180,7 @@ public class PlayerController : MonoBehaviour
 
     public void AutoSaveGame(int idx)
     {
-        Managers.Game.SaveData.playerPosition = _autoSavePos[idx];
+        Managers.Game.AutoSaveData.playerPosition = _autoSavePos[idx];
         Managers.Game.AutoSaveNum = idx;
     }
 
@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
         ResetState();
         // ShowInfoIcon(infoEnum.moveKey);
 
-        Managers.Game.SaveData.playerPosition = _autoSavePos[0];
+        //Managers.Game.AutoSaveData.playerPosition = _autoSavePos[0];
         Managers.Game.AutoSaveNum = 0;
     }
 
